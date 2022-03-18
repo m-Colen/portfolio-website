@@ -1,1 +1,87 @@
+/* General setup */
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+  --header-font: 'PT Sans', Sans-Serif;
+  --body-font:'Bitter', Serif;
+  --primary-color: #b4cfb0; /* Surf Green */
+}
+
+body {
+  font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-font);
+}
+
+/* Nav section */
+
+nav {
+  background-color: var(--primary-color);
+  padding: .5rem 13%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#nav-logo {
+  font-family: var(--header-font);
+  font-size: 1.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  transition: .3s;
+}
+
+nav a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+#nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Building hamburger menu */
+
+#hamburger-menu {
+  display: none;
+}
+
+.hamburger-item {
+  width: 25px;
+  height: 2.5px;
+  background-color: black;
+  margin: .25rem 0;
+}
+
+/* Media query to make hamburger menu show on screens 600px or smaller */
+
+@media only screen and (max-width: 600px) {
+  #hamburger-menu {
+    display: block;
+  }
+  #nav-links {
+    display: none;
+  }
+}
