@@ -9,8 +9,8 @@ html {
   font-size: 100%;
   --header-font: 'Roboto Condensed', Sans-Serif;
   --body-font: 'Cabin', Sans-Serif;
-  --primary-color: linear-gradient(45deg, #1727AE,  #6987D5); 
-  --attention-color: linear-gradient(45deg, #2C43B8, #445BC1); 
+  --primary-color: rgb(21, 20, 48); 
+  --attention-color: rgb(167, 45, 36); 
 }
 
 body {
@@ -29,9 +29,9 @@ h6 {
 
 /* Nav section */
 
-#lower-nav {
+nav {
   background: var(--primary-color);
-  padding: .25rem 14%;
+  padding: 0 14%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,7 +45,7 @@ h6 {
 
 #nav-logo {
   font-family: var(--header-font);
-  font-size: 19.2px;
+  font-size: 2rem;
 }
 
 #nav-logo a:hover {
@@ -60,7 +60,7 @@ nav a {
 }
 
 nav a:hover {
-  border-bottom: goldenrod;
+  color: goldenrod;
 }
 
 nav li {
@@ -113,7 +113,7 @@ nav li {
   display: none;
   width: 100%;
   position: absolute;
-  top: 2rem;
+  top: 2.3rem;
   right: 0;
   padding: 1rem;
   background-color: #2C43B8;
@@ -135,7 +135,7 @@ nav li {
 }
 
 #about img {
-  width: 50%;
+  width: 40%;
   min-width: 150px;
   border-radius: 50%;
   position: relative;
@@ -175,14 +175,16 @@ nav li {
 .cta-button {
   text-decoration: none;
   color: #000;
-  padding: .5rem 1rem;
-  border: 1.5px solid #1727AE;
-  border-radius: 10px;
+  padding: .4rem 1rem;
+  border: 1.5px solid var(--attention-color);
+  box-shadow: 4px 4px black;
+  transition: all 1s;
 }
 
 .cta-button:hover {
-  background: #1727AE;
+  background: var(--attention-color);
   color: #fff;
+  box-shadow: 0 0 white;
 }
 
 @media only screen and (max-width: 650px) {
