@@ -20,7 +20,7 @@ const mobileMenuToggle = () => mobileNavMenu.style.display === 'none' && topBun.
 hamMenu.addEventListener('click', hamMenuToggle);
 hamMenu.addEventListener('click', mobileMenuToggle);
 
-// Hides mobile nav when width passes the 600px thresshold
+// Hides mobile nav when width passes the 600px threshold
 
 const resetNav = () => {
   if (window.innerWidth >= 600) {
