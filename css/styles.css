@@ -3,18 +3,19 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
 }
 
 html {
   font-size: 100%;
-  --header-font: 'PT Sans', Sans-Serif;
-  --body-font:'Bitter', Serif;
-  --primary-color: #b4cfb0; /* Surf Green */
+  --header-font: 'Roboto Condensed', Sans-Serif;
+  --body-font: 'Cabin', Sans-Serif;
+  --primary-color: linear-gradient(45deg, #1727AE,  #6987D5); 
+  --attention-color: linear-gradient(45deg, #2C43B8, #445BC1); 
 }
 
 body {
   font-family: var(--body-font);
+  margin: 0;
 }
 
 h1,
@@ -28,29 +29,38 @@ h6 {
 
 /* Nav section */
 
-nav {
-  background-color: var(--primary-color);
-  padding: .5rem 13%;
+#lower-nav {
+  background: var(--primary-color);
+  padding: .25rem 14%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 3;
+  opacity: .95;
 }
 
 #nav-logo {
   font-family: var(--header-font);
-  font-size: 1.2rem;
+  font-size: 19.2px;
+}
+
+#nav-logo a:hover {
+  border: none;
+  text-transform: uppercase;
 }
 
 nav a {
   text-decoration: none;
-  color: #111;
-  transition: .3s;
+  color: #fff;
+  transition: all 1s;
 }
 
 nav a:hover {
-  font-weight: bold;
-  text-decoration: underline;
+  border-bottom: goldenrod;
 }
 
 nav li {
@@ -66,16 +76,29 @@ nav li {
 
 #hamburger-menu {
   display: none;
+  cursor: pointer;
 }
 
 .hamburger-item {
   width: 25px;
   height: 2.5px;
-  background-color: black;
+  background-color: #fff;
   margin: .25rem 0;
 }
 
-/* Media query to make hamburger menu show on screens 600px or smaller */
+/* Hamburger menu animation */
+
+.ham-top-inactive {
+  transition: all 1s;
+  transform: translatey(.40625rem);
+}
+
+.ham-bottom-inactive {
+  transition: all 1s;
+  transform: translatey(-.40625rem);
+}
+
+/* To make hamburger menu show on screens 600px or smaller */
 
 @media only screen and (max-width: 600px) {
   #hamburger-menu {
@@ -83,5 +106,170 @@ nav li {
   }
   #nav-links {
     display: none;
+  }
+}
+
+#nav-links-mobile {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  padding: 1rem;
+  background-color: #2C43B8;
+  margin-top: 0;
+}
+
+.nav-link {
+  margin: 1rem 0;
+}
+
+/* About section */
+
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 12%;
+}
+
+#about img {
+  width: 50%;
+  min-width: 150px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+#about h1, 
+#about p {
+  margin: .1rem;
+}
+
+#about h1 {
+  font-size: 3rem;
+}
+
+#about p {
+  font-size: 1.2rem;
+}
+
+#about-container {
+  width: 50%;
+  font-size: 1.3rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  text-align: center;
+}
+
+/* CTA button */
+
+#about-container > button {
+  all: unset;
+  cursor: pointer;
+  margin-top: 7%;
+}
+
+.cta-button {
+  text-decoration: none;
+  color: #000;
+  padding: .5rem 1rem;
+  border: 1.5px solid #1727AE;
+  border-radius: 10px;
+}
+
+.cta-button:hover {
+  background: #1727AE;
+  color: #fff;
+}
+
+@media only screen and (max-width: 650px) {
+  html {
+    font-size: .95rem;
+  }
+  .cta-button {
+    font-size: .95rem;
+  }
+  #about {
+    margin: 0 3%;
+  }
+  #about h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Projects section */
+
+#projects {
+  background: linear-gradient(45deg, #000, #111);
+  margin: 0;
+}
+
+/* Skills section */
+
+#skills > h2 {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+#skills-container {
+  display: flex;
+  flex-flow: wrap;
+}
+
+#skills-container > i {
+  margin-right: 5%;
+  margin-bottom: 1rem;
+  color: #e77224;
+  width: 50px;
+  text-align: center;
+}
+
+/* Media query to make the skills section more fluid for small screens */
+
+@media only screen and (max-width: 900px) {
+  #skills-container {
+    justify-content: space-evenly;
+  }
+  #skills-container > i {
+    margin-right: 1rem;
+  }
+}
+
+/* Skills animations */
+
+.fa-html5 {
+  animation: changeSkillColor 7s infinite;
+}
+
+.fa-css3-alt {
+  animation: changeSkillColor 7s 1s infinite;
+}
+
+.fa-js {
+  animation: changeSkillColor 7s 2s infinite;
+}
+
+.fa-git {
+  animation: changeSkillColor 7s 3s infinite;
+}
+
+.fa-github {
+  animation: changeSkillColor 7s 4s infinite;
+}
+
+.fa-chrome {
+  animation: changeSkillColor 7s 5s infinite;
+}
+
+.fa-figma {
+  animation: changeSkillColor 7s 6s infinite;
+}
+
+@keyframes changeSkillColor {
+  14% {
+    color: white;
   }
 }

@@ -1,36 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matt Colen</title>
-  <link href="https://fonts.googleapis.com/css?family=Bitter|PT+Sans:400i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://kit.fontawesome.com/972df6eb1d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
   <!--Header section-->
   <header>
-
+    <!--Nav section-->
     <nav>
-      <div id="nav-logo">
-        <a href="#">Matt Colen</a>
+      <div id="upper-nav">
+
       </div>
-      <ul id="nav-links">
-        <li class="nav-link"><a href="">About</a></li>
-        <li class="nav-link"><a href="">Projects</a></li>
-        <li class="nav-link"><a href="">Contact</a></li>
-      </ul>
-      <div id="hamburger-menu">
-        <div class="hamburger-item" id="line-1"></div>
-        <div class="hamburger-item" id="line-2"></div>
-        <div class="hamburger-item" id="line-1"></div>
+      <div id="lower-nav">
+        <div id="nav-logo">
+          <a href="#" title="Home Page">mC_</a>
+        </div>
+        <!--Desktop nav menu-->
+        <ul id="nav-links">
+          <li class="nav-link"><a href="#about">About</a></li>
+          <li class="nav-link"><a href="https://github.com/m-Colen" target="_blank">Projects</a></li>
+          <li class="nav-link"><a href="">Contact</a></li>
+        </ul>
+        <!--Hamburger nav icon-->
+        <div id="hamburger-menu">
+          <div id="ham-top-bun" class="hamburger-item" id="line-1"></div>
+          <div class="hamburger-item" id="line-2"></div>
+          <div id="ham-bottom-bun" class="hamburger-item" id="line-1"></div>
+        </div>
+        <!--Mobile nav menu-->
+        <ul id="nav-links-mobile">
+          <li class="nav-link mobile"><a href="#about">About</a></li>
+          <li class="nav-link"><a href="https://github.com/m-Colen" target="_blank">Projects</a></li>
+          <li class="nav-link mobile"><a href="">Contact</a></li>
+        </ul>
       </div>
     </nav>
     
   </header>
+  
+  <!--Main section-->
+  <main>
+    
+    <!--About section-->
+    <section id="about">
+      <div id="about-container">
+        <img src="https://avatars.githubusercontent.com/u/94212626?v=4" alt="Matt Colen">
+        <h1>Matt Colen</h1>
+        <p>Front End Web Developer</p>
+        <button><a class="cta-button" href="https://github.com/m-Colen" target="_blank">Check out my projects</a></button>
+      </div>
+    </section>
+    
+    <!--Projects section-->
+    <section id="projects">
+      <h2>Skills</h2>
+      <div id="skills-container">
+        <i title="HTML5" class="fab fa-html5 fa-3x"></i>
+        <i title="CSS3" class="fab fa-css3-alt fa-3x"></i>
+        <i title="JavaScript" class="fab fa-js fa-3x"></i>       
+        <i title="Git" class="fab fa-git fa-3x"></i>
+        <i title="GitHub" class="fab fa-github fa-3x"></i>
+        <i title="Chrome Dev Tools" class="fab fa-chrome fa-3x"></i>
+        <i title="Figma" class="fab fa-figma fa-3x"></i>
+      </div>
+    </section>
+    
+  </main>
 
+  <script src="js/script.js"></script>
 </body>
-</html>
