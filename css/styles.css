@@ -31,7 +31,7 @@ h6 {
 
 nav {
   background: var(--primary-color);
-  padding: 0 14%;
+  padding: 0 12%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,11 +46,16 @@ nav {
 #nav-logo {
   font-family: var(--header-font);
   font-size: 2rem;
+  width: calc(100% / 3);
 }
 
 #nav-logo a:hover {
   border: none;
   text-transform: uppercase;
+}
+
+nav li {
+  list-style-type: none;
 }
 
 nav a {
@@ -63,13 +68,19 @@ nav a:hover {
   color: goldenrod;
 }
 
-nav li {
-  list-style-type: none;
-}
-
 #nav-links {
   display: flex;
+  justify-content: center;
+  gap: 0 2rem;
+  width: calc(100% / 3);
+  font-size: 1.2rem;
+}
+
+#contact-links {
+  display: flex;
+  justify-content: flex-end;
   gap: 2rem;
+  width: calc(100% / 3);
 }
 
 /* Building hamburger menu */
@@ -107,6 +118,9 @@ nav li {
   #nav-links {
     display: none;
   }
+  #contact-links {
+    display: none;
+  }
 }
 
 #nav-links-mobile {
@@ -134,9 +148,13 @@ nav li {
   margin: 0 12%;
 }
 
-#about img {
-  width: 40%;
-  min-width: 150px;
+#about-img {
+  width: 40vw;
+  max-width: 220px;
+}
+
+#about-img > img {
+  width: 100%;
   border-radius: 50%;
   position: relative;
   z-index: 2;
@@ -144,7 +162,7 @@ nav li {
 
 #about h1, 
 #about p {
-  margin: .1rem;
+  margin: .05rem 0;
 }
 
 #about h1 {
@@ -169,7 +187,7 @@ nav li {
 #about-container > button {
   all: unset;
   cursor: pointer;
-  margin-top: 7%;
+  margin-top: 6%;
 }
 
 .cta-button {
@@ -202,11 +220,16 @@ nav li {
   }
 }
 
+@media only screen and (max-width: 380px) {
+  .cta-button {
+    font-size: .7rem;
+  }
+}
+
 /* Projects section */
 
 #projects {
   background: linear-gradient(45deg, #000, #111);
-  margin: 0;
 }
 
 /* Skills section */
