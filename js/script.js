@@ -8,17 +8,14 @@ const hamMenu = document.getElementById('hamburger-menu');
 const mobileNavMenu = document.getElementById('nav-links-mobile');
 const navLinks = document.getElementById('nav-links');
 
-// Toggle hamburger menu animation
+// Toggle hamburger menu 
 const hamMenuToggle = () => {
-  topBun.className === 'hamburger-item' ? topBun.className = 'hamburger-item ham-top-inactive' : topBun.className = 'hamburger-item';
-  bottomBun.className === 'hamburger-item' ? bottomBun.className = 'hamburger-item ham-bottom-inactive' : bottomBun.className = 'hamburger-item';
+  topBun.className === 'hamburger-item' || topBun.className === 'hamburger-item start' ? topBun.className = 'hamburger-item ham-top-inactive' : topBun.className = 'hamburger-item';
+  bottomBun.className === 'hamburger-item' || bottomBun.className === 'hamburger-item start' ? bottomBun.className = 'hamburger-item ham-bottom-inactive' : bottomBun.className = 'hamburger-item';
+  mobileNavMenu.style.display === 'none' || topBun.className === 'hamburger-item ham-top-inactive' ? mobileNavMenu.style.display = 'block' : mobileNavMenu.style.display = 'none'
 };
 
-// Show/hide the mobile nav menu
-const mobileMenuToggle = () => mobileNavMenu.style.display === 'none' && topBun.className === 'hamburger-item ham-top-inactive' ? mobileNavMenu.style.display = 'block' : mobileNavMenu.style.display = 'none';
-
 hamMenu.addEventListener('click', hamMenuToggle);
-hamMenu.addEventListener('click', mobileMenuToggle);
 
 // Hides mobile nav when width passes the 600px threshold
 
