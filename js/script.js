@@ -28,3 +28,4 @@ const resetNav = () => {
 }
 
 window.addEventListener('resize', resetNav);
+
