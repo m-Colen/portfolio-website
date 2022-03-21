@@ -29,3 +29,22 @@ const resetNav = () => {
 
 window.addEventListener('resize', resetNav);
 
+/* About me section setup */
+
+const aboutMeSection = document.getElementById('about-me-text');
+const aboutButton = document.getElementById('about-me-button');
+const aboutMeClosed = document.getElementById('about-me-button-close')
+const mainNavAbout = document.getElementById('main-nav-about');
+const mobileNavAbout = document.getElementById('mobile-nav-about');
+
+const aboutButtonToggle = () => {
+  // To toggle about text
+  aboutMeSection.style.display === 'none' ? aboutMeSection.style.display = 'block' : aboutMeSection.style.display = 'none';
+  // Toggle button text
+  aboutMeSection.style.display === 'none' ? aboutMeClosed.style.display = 'none' : aboutMeClosed.style.display = 'block';
+}
+
+aboutButton.addEventListener('click', aboutButtonToggle);
+mainNavAbout.addEventListener('click', aboutButtonToggle);
+mobileNavAbout.addEventListener('click', aboutButtonToggle);
+aboutMeClosed.addEventListener('click', aboutButtonToggle);

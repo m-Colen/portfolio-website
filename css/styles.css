@@ -169,6 +169,7 @@ nav a:hover {
 }
 
 #about-me-button {
+  display: block;
   height: 75px;
   width: 75px;
   position: absolute;
@@ -179,15 +180,43 @@ nav a:hover {
   padding: .25rem;
   background-color: rgba(30, 30, 30, 95%);
   color: #fff;
+  transition: .5s;
+  animation: buttonPulse 5s infinite ease-out forwards;
 }
 
 #about-me-button:hover {
-  background-color: rgba(60, 60, 60, 95%);
+  background-color: var(--attention-color);
+  transform: scale(1.1);
+  animation: none;
 }
 
-@media only screen and (max-width: 500px) {
-  #about-me-button {
-    right: -27%;
+#about-me-button-close {
+  display: none;
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  bottom: 25%;
+  right: -18%;
+  z-index: 1;
+  border-radius: 50%;
+  padding: .25rem;
+  background-color: rgb(30, 30, 30);
+  color: #fff;
+  transition: .5s;
+  z-index: 2;
+}
+
+#about-me-button-close:hover {
+  background-color: var(--attention-color);
+  transform: scale(1.1);
+}
+
+@keyframes buttonPulse {
+  0% {
+    
+  }
+  50% {
+    background-color: var(--attention-color);
   }
 }
 
@@ -198,10 +227,6 @@ nav a:hover {
 
 #about h1 {
   font-size: 3rem;
-}
-
-#about p {
-  font-size: 1.2rem;
 }
 
 #about-container {
@@ -234,15 +259,48 @@ nav a:hover {
   box-shadow: 0 0 white;
 }
 
+#about-me-text {
+  background-color: rgb(90, 22, 18);
+  padding: 2%;
+  color: #fff;
+  display: none;
+  animation: slideIn 1s ease-out;
+}
+
+#about-me-text > p {
+  margin-bottom: 2%;
+}
+
+#about-me-text > ul {
+  margin-left: 1rem;
+}
+
+/* Animation to slide in about me text */
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #about {
+    flex-direction: column;
+    margin: 0;
+  }
+  #about-me-text {
+    margin-top: 10%;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
 @media only screen and (max-width: 650px) {
   html {
     font-size: .95rem;
-  }
-  .cta-button {
-    font-size: .95rem;
-  }
-  #about {
-    margin: 0 3%;
   }
   #about h1 {
     font-size: 2.5rem;
@@ -259,13 +317,20 @@ nav a:hover {
 
 #projects {
   background: linear-gradient(45deg, #000, #111);
+  padding: 1rem;
+  text-align: center;
+}
+
+#projects > h2 {
+  color: white;
+  margin-bottom: 3%;
 }
 
 /* Skills section */
 
-#skills > h2 {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 1rem;
+#skills-container {
+  display: flex;
+  justify-content: center;
 }
 
 #skills-container {
@@ -281,45 +346,34 @@ nav a:hover {
   text-align: center;
 }
 
-/* Media query to make the skills section more fluid for small screens */
-
-@media only screen and (max-width: 900px) {
-  #skills-container {
-    justify-content: space-evenly;
-  }
-  #skills-container > i {
-    margin-right: 1rem;
-  }
-}
-
 /* Skills animations */
 
 .fa-html5 {
-  animation: changeSkillColor 7s infinite;
+  animation: changeSkillColor 14s infinite;
 }
 
 .fa-css3-alt {
-  animation: changeSkillColor 7s 1s infinite;
+  animation: changeSkillColor 14s 1s infinite;
 }
 
 .fa-js {
-  animation: changeSkillColor 7s 2s infinite;
+  animation: changeSkillColor 14s 2s infinite;
 }
 
 .fa-git {
-  animation: changeSkillColor 7s 3s infinite;
+  animation: changeSkillColor 14s 3s infinite;
 }
 
 .fa-github {
-  animation: changeSkillColor 7s 4s infinite;
+  animation: changeSkillColor 14s 4s infinite;
 }
 
 .fa-chrome {
-  animation: changeSkillColor 7s 5s infinite;
+  animation: changeSkillColor 14s 5s infinite;
 }
 
 .fa-figma {
-  animation: changeSkillColor 7s 6s infinite;
+  animation: changeSkillColor 14s 6s infinite;
 }
 
 @keyframes changeSkillColor {
