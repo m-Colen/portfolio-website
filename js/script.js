@@ -1,10 +1,8 @@
 /* Nav Section */
 
-// Setting up hamburger menu variables
-
+const hamMenu = document.getElementById('hamburger-menu');
 const topBun = document.getElementById('ham-top-bun');
 const bottomBun = document.getElementById('ham-bottom-bun');
-const hamMenu = document.getElementById('hamburger-menu');
 const mobileNavMenu = document.getElementById('nav-links-mobile');
 const navLinks = document.getElementById('nav-links');
 
@@ -17,10 +15,10 @@ const hamMenuToggle = () => {
 
 hamMenu.addEventListener('click', hamMenuToggle);
 
-// Hides mobile nav when width passes 600px threshold
+// Hides mobile nav when width passes 700px threshold
 
 const resetNav = () => {
-  if (window.innerWidth >= 600) {
+  if (window.innerWidth >= 700) {
     mobileNavMenu.style.display = 'none';
     topBun.className = 'hamburger-item';
     bottomBun.className = 'hamburger-item';
@@ -29,9 +27,9 @@ const resetNav = () => {
 
 window.addEventListener('resize', resetNav);
 
-/* About me section setup */
+/* About me section */
 
-const aboutMeSection = document.getElementById('background-divider');
+const aboutMeSection = document.getElementById('about-text');
 const aboutButton = document.getElementById('about-me-button');
 const aboutMeClosed = document.getElementById('about-me-button-close')
 const mainNavAbout = document.getElementById('main-nav-about');
@@ -65,3 +63,43 @@ const updateWidth = () => {
 }
 
 window.addEventListener('resize', updateWidth);
+
+/* Project carousel */
+
+// Targets
+const leftArrow = document.getElementById('left-arrow');
+const rightArrow = document.getElementById('right-arrow');
+
+// What I want to change
+const projectDisplay = document.getElementById('project-display');
+const projectSummaryText = document.getElementById('project-summary-text');
+const githubButton = document.getElementById('project-github-button');
+const liveButton = document.getElementById('project-live-button');
+
+// Arr for live sites
+
+const projectSites = ['https://m-colen.github.io/number-guessor/', 'https://github.com/m-Colen/number-guessor'];
+const projectDescriptions = ['This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.', 'This is a JS project for working with DNA gener sequences.'];
+const githubPageLinks = ['https://github.com/m-Colen/number-guessor', 'https://github.com/m-Colen/mysterious-organism'];
+const liveProjectLinks = ['https://m-colen.github.io/number-guessor/', 'https://github.com/m-Colen/mysterious-organism'];
+
+let projectNumber = 0;
+
+const moveRight = () => {
+  projectNumber < projectSites.length - 1 ? projectNumber++ : projectNumber = 0;
+  projectDisplay.setAttribute('src', projectSites[projectNumber]);
+  projectSummaryText.innerHTML = projectDescriptions[projectNumber];
+  githubButton.setAttribute('href', githubPageLinks[projectNumber]);
+  liveButton.setAttribute('href', liveProjectLinks[projectNumber]);
+};
+
+const moveLeft = () => {
+  projectNumber >= 1 ? projectNumber-- : projectNumber = projectSites.length - 1;
+  projectDisplay.setAttribute('src', projectSites[projectNumber]);
+  projectSummaryText.innerHTML = projectDescriptions[projectNumber];
+  githubButton.setAttribute('href', githubPageLinks[projectNumber]);
+  liveButton.setAttribute('href', liveProjectLinks[projectNumber]);
+};
+
+rightArrow.addEventListener('click', moveRight);
+leftArrow.addEventListener('click', moveLeft);
