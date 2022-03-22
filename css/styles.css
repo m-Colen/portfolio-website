@@ -10,7 +10,8 @@ html {
   --header-font: 'Roboto Condensed', Sans-Serif;
   --body-font: 'Cabin', Sans-Serif;
   --primary-color: rgb(21, 20, 48); /* Navy blue */
-  --attention-color: rgb(167, 45, 36); /* Red */
+  --secondary-color: #e57022; /* Gold */
+  --button-color: #ca6011;
 }
 
 body {
@@ -27,10 +28,28 @@ h4,
 h5,
 h6 {
   font-family: var(--header-font);
+  color: var(--secondary-color);
 }
 
 .inactive {
   display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 
 /* Nav section */
@@ -67,11 +86,10 @@ nav a {
   text-decoration: none;
   color: #fff;
   transition: all 1s;
-  animation: none;
 }
 
 nav a:hover {
-  color: goldenrod;
+  color: var(--secondary-color);
 }
 
 #nav-links {
@@ -79,7 +97,7 @@ nav a:hover {
   justify-content: center;
   gap: 0 2rem;
   width: calc(100% / 3);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 #contact-links {
@@ -89,7 +107,7 @@ nav a:hover {
   width: calc(100% / 3);
 }
 
-/* Building hamburger menu */
+/* Hamburger menu */
 
 #hamburger-menu {
   display: none;
@@ -115,7 +133,7 @@ nav a:hover {
   transform: translatey(-.40625rem);
 }
 
-/* To make hamburger menu show on screens 700px or smaller */
+/* Makes hamburger menu only show on screens 700px or smaller & hides desktop nav & contact links */
 
 @media only screen and (max-width: 700px) {
   #hamburger-menu {
@@ -126,9 +144,6 @@ nav a:hover {
   }
   #contact-links {
     display: none;
-  }
-  #about-container a {
-  margin-top: 6vw;
   }
   nav {
     padding: 0 6%;
@@ -141,7 +156,7 @@ nav a:hover {
   position: absolute;
   top: 2.3rem;
   left: 0;
-  padding: 1rem;
+  padding: .5rem 1rem;
   background-color: #2C43B8; /* Light blue */
   margin-top: 0;
 }
@@ -163,7 +178,6 @@ nav a:hover {
 #about-img {
   width: 40vw;
   max-width: 195px;
-  border-radius: 50%;
   position: relative;
 }
 
@@ -173,21 +187,34 @@ nav a:hover {
   position: relative;
 }
 
-.button {
-  position: relative;
-  padding: .5rem;
-  transition: .5s;
-  margin-top: .5rem;
-  font-size: 1.1rem;
-  background-color: #111117;
-  color: #fff;
-  border: 1px solid #fff;
-  cursor: pointer;
+#about-links {
+  display: flex;
+  justify-content: center;
+  gap: 15%;
+  margin: 1rem 0;
 }
 
-#about-me-button:hover {
-  background-color: var(--attention-color);
+.button {
+  curson: pointer;
+  text-decoration: none;
   color: #fff;
+  font-size: 1.4rem;
+  background-color: transparent;
+  width: 7rem;
+  padding: .25rem;
+  border: 1.5px solid var(--button-color);
+  box-shadow: 6px 6px 2px #fff;
+  transition: all 1s;
+  text-align: center;
+}
+
+.reverse-button {
+  box-shadow: -6px 6px 2px #fff;
+}
+
+.button:hover {
+  background: var(--button-color);
+  box-shadow: 0 0 white;
 }
 
 #about-me-button-close {
@@ -199,7 +226,7 @@ nav a:hover {
 }
 
 #about-me-button-close:hover {
-  background-color: #aaa;
+  background-color: #999;
   color: #eee;
 }
 
@@ -222,25 +249,7 @@ nav a:hover {
   z-index: 2;
 }
 
-/* CTA button */
-
-.cta-button {
-  text-decoration: none;
-  color: #fff;
-  padding: .4rem 1rem;
-  border: 1.5px solid var(--attention-color);
-  box-shadow: 6px 6px 2px #fff;
-  transition: all 1s;
-  margin: 2vw;
-}
-
-.cta-button:hover {
-  background: var(--attention-color);
-  color: #fff;
-  box-shadow: 0 0 white;
-}
-
-#background-divider {
+#about-text {
   position: absolute;
   top: 0;
   color: #111;
@@ -248,11 +257,11 @@ nav a:hover {
   z-index: 1;
 }
 
-#background-divider > p {
+#about-text > p {
   margin-bottom: 3%;
 }
 
-#background-divider > ul {
+#about-text > ul {
   margin-left: 1.2rem;
 }
 
@@ -265,12 +274,6 @@ nav a:hover {
   }
 }
 
-@media only screen and (max-width: 380px) {
-  .cta-button {
-    font-size: .98rem;
-  }
-}
-
 .unhidden-large {
   animation: rotateInLarge 1s ease-in forwards;
 }
@@ -278,6 +281,8 @@ nav a:hover {
 .unhidden-small {
   animation: rotateInSmall 1s ease-in forwards;
 }
+
+/* Animations for about-text */
 
 @keyframes rotateInLarge {
   0% {
@@ -301,7 +306,7 @@ nav a:hover {
     height: auto;
     position: relative;
     padding: 1rem;
-    margin: 0 5%;
+    margin: 0 2%;
     transition: all 3s;
     color: #fff;
     box-shadow: 10px 10px 2px #fff;
@@ -329,7 +334,7 @@ nav a:hover {
     position: relative;
     color: #fff;
     box-shadow: none;
-    padding-top: 1rem;
+    padding: 1.25rem 0;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
   }
@@ -341,86 +346,115 @@ nav a:hover {
     margin: 0;
     padding: 0;
   }
-  #background-divider {
-    width: 100%;
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  #background-divider {
-    width: 100%;
-    margin: 0 !important;
-  }
 }
 
 /* Projects section */
 
 #projects {
-  background: linear-gradient(45deg, #000, #030303);
+  background: linear-gradient(45deg, #080808, #111);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   position: relative;
-  padding: 5%;
+  padding: 0 12%;
   text-align: center;
   z-index: 2;
   margin-top: 0;
   height: 100vh;
+  border-radius: 20px 20px 0 0;
+  border-top: 1px solid #999;
 }
 
 #projects h2 {
-  margin-bottom: 3rem auto;
-  text-decoration: underline #fff;
-  display: block;
+  margin-top: .5rem;
+  border-bottom: 10px solid #999;
+  font-size: 2rem;
+}
+
+#projects-container > i {
+  padding: .3rem 1rem;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+#projects-container > i:hover {
+  color: var(--secondary-color);
+  transform: scale(1.2);
 }
 
 #project-carousel {
-  height: 50vh;
-  width: 50%;
-  background-color: #fff;
-  display: block;
-  margin: auto;
-}
-
-@media only screen and (max-width: 1000px) {
-  #project-carousel {
-  height: 40vh;
-  width: 60%;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  #project-carousel {
+  height: 70vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+#project-carousel > iframe {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+#project-summary {
+  text-align: left;
+  margin: 0;
+  padding: 4%;
+  background-color: transparent;
+  color: white;
+}
+
+#project-summary > a {
+  padding: .5rem;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+#project-summary p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+  #projects {
+    padding: 0 6%;
+  }
+  #project-summary {
+    padding: 6%;
   }
 }
 
 /* Tech stack section */
 
-#tech-stacks > h2 {
-  color: #fff;
+#tech-stack {
+  text-align: center;
+  padding: 0 12%;
 }
 
+#tech-stack h3 {
+  margin-bottom: 0rem;
+  border-bottom: 5px solid #999;
+}
 
 #skills-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-flow: wrap;
   gap: 5%;
-  color: #e77224; /* Gold */
+  padding-top: 2.5vh;
+  padding-bottom: 5vh;
 }
 
 #skills-container  i {
-  margin-right: 5%;
-  margin-bottom: 1rem;
-  width: 50px;
+  margin-right: 1%;
   text-align: center;
 }
 
 .tech-card {
   display: flex;
   align-items: center;
+  gap: .2rem;
 }
 
 /* Skills animations */
@@ -441,7 +475,7 @@ nav a:hover {
   animation: changeSkillColor 18s 9s infinite;
 }
 
-.fa-github {
+.github-animation {
   animation: changeSkillColor 18s 12s infinite;
 }
 
@@ -451,16 +485,18 @@ nav a:hover {
 
 @keyframes changeSkillColor {
   12% {
-    color: white;
+    color: var(--secondary-color);
   }
 }
 
 /* Footer section */
 
 footer {
-  background: var(--primary-color);
-  padding: .5rem 5%;
+  background: #000;
+  padding: .08rem 0;
   opacity: .95;
+  display: flex;
+  justify-content: center;
 }
 
 footer a {
@@ -476,14 +512,9 @@ footer li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: .8rem;
-}
-
-#footer-contact a {
-  animation: none;
+  gap: 2rem;
 }
 
 #footer-contact a:hover {
-  color: goldenrod;
-  animation: none;
+  color: var(--secondary-color);
 }
