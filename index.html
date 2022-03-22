@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,15 +33,15 @@
       </ul>
       <!--Hamburger nav icon-->
       <div id="hamburger-menu">
-        <div id="ham-top-bun" class="hamburger-item start" id="line-1"></div>
-        <div class="hamburger-item" id="line-2"></div>
-        <div id="ham-bottom-bun" class="hamburger-item start" id="line-1"></div>
+        <div id="ham-top-bun" class="hamburger-item start"></div>
+        <div class="hamburger-item"></div>
+        <div id="ham-bottom-bun" class="hamburger-item start"></div>
       </div>
       <!--Mobile nav menu-->
       <ul id="nav-links-mobile">
         <li id="mobile-nav-about" class="nav-link mobile"><a href="#about">About</a></li>
         <li class="nav-link"><a href="https://github.com/m-Colen" target="_blank">Projects</a></li>
-        <li class="nav-link mobile"><a href="">Contact</a></li>
+        <li class="nav-link mobile"><a href="mailto:mzcolen@gmail.com">Contact</a></li>
       </ul>
     </nav>
     
@@ -52,15 +55,14 @@
       <div id="about-container">
         <div id="about-img">
           <img src="https://avatars.githubusercontent.com/u/94212626?v=4" alt="Matt Colen">
-          <button id="about-me-button" title="Learn more about me">About me</button>
-          <button id="about-me-button-close"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <h1>Matt Colen</h1>
         <p>Front End Web Developer</p>
-        <button><a class="cta-button" href="https://github.com/m-Colen" target="_blank">Check out my projects</a></button>
+        <a class="cta-button" href="https://github.com/m-Colen" target="_blank">Check out my projects</a>
+        <button id="about-me-button" class="button" title="Learn more about me">More about me</button>
       </div>
-      <div id="about-me-text">
-        <p>Hi I'm Matt. </p>
+      <div id="background-divider">
+        <p>Hi I'm Matt.</p>
         <p>I'm a front-end web developer who loves to push the boundaries with my designs.</p>
         <p>In my free time, you can find me:</p>
         <ul>
@@ -69,24 +71,62 @@
           <li>Noodling on my guitar</li>
           <li>Playing video games</li>
         </ul>
+        <button id="about-me-button-close" class="inactive"><i class="fa-solid fa-xmark"></i></button>
       </div>
     </section>
     
     <!--Projects section-->
     <section id="projects">
-      <h2>Tech Stacks</h2>
-      <div id="skills-container">
-        <i title="HTML5" class="fab fa-html5 fa-3x"></i>
-        <i title="CSS3" class="fab fa-css3-alt fa-3x"></i>
-        <i title="JavaScript" class="fab fa-js fa-3x"></i>       
-        <i title="Git" class="fab fa-git fa-3x"></i>
-        <i title="GitHub" class="fab fa-github fa-3x"></i>
-        <i title="Chrome Dev Tools" class="fab fa-chrome fa-3x"></i>
-        <i title="Figma" class="fab fa-figma fa-3x"></i>
+      <div id="projects-container">
+        <h2>Projects</h2>
+        <div id="project-carousel">
+          
+        </div>
       </div>
+      <div id="tech-stacks">
+        <h2>Tech Stacks</h2>
+        <div id="skills-container">
+          <div id="html-container" class='tech-card'>
+            <i title="HTML5" class="fab fa-html5 fa-3x"></i>
+            <p>HTML</p>
+          </div>
+          <div id="css-container" class='tech-card'>
+            <i title="CSS3" class="fab fa-css3-alt fa-3x"></i>
+            <p>CSS</p>
+          </div>
+          <div id="js-container" class='tech-card'>
+            <i title="JavaScript" class="fab fa-js fa-3x"></i>
+            <p>JS</p>
+          </div>
+          <div id="git-container" class='tech-card'>
+            <i title="Git" class="fab fa-git fa-3x"></i>
+            <p>Git</p>
+          </div>
+          <div id="gitHub-container" class='tech-card'>
+            <i title="GitHub" class="fab fa-github fa-3x"></i>
+            <div>GitHub</div>
+          </div>
+          <div id="figma-container" class='tech-card'>
+            <i title="Figma" class="fab fa-figma fa-3x"></i>
+            <p>Figma</p>
+          </div>
+        </div>
+      </div>
+      
     </section>
     
   </main>
+  
+  <!-- Footer section -->
+  <footer>
+    <ul id="footer-contact">
+      <li class="contact-link"><a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+      <li class="contact-link"><a href="https://github.com/m-Colen" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+      <li class="contact-link"><a href="mailto:mzcolen@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-at"></i></a></li>
+    </ul>
+  </footer>
 
   <script src="js/script.js"></script>
 </body>
+
+</html>

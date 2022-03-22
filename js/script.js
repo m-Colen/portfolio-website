@@ -17,7 +17,7 @@ const hamMenuToggle = () => {
 
 hamMenu.addEventListener('click', hamMenuToggle);
 
-// Hides mobile nav when width passes the 600px threshold
+// Hides mobile nav when width passes 600px threshold
 
 const resetNav = () => {
   if (window.innerWidth >= 600) {
@@ -31,20 +31,37 @@ window.addEventListener('resize', resetNav);
 
 /* About me section setup */
 
-const aboutMeSection = document.getElementById('about-me-text');
+const aboutMeSection = document.getElementById('background-divider');
 const aboutButton = document.getElementById('about-me-button');
 const aboutMeClosed = document.getElementById('about-me-button-close')
 const mainNavAbout = document.getElementById('main-nav-about');
 const mobileNavAbout = document.getElementById('mobile-nav-about');
 
 const aboutButtonToggle = () => {
-  // To toggle about text
-  aboutMeSection.style.display === 'none' ? aboutMeSection.style.display = 'block' : aboutMeSection.style.display = 'none';
-  // Toggle button text
-  aboutMeSection.style.display === 'none' ? aboutMeClosed.style.display = 'none' : aboutMeClosed.style.display = 'block';
+  // To toggle "about me" text
+  if (aboutMeSection.className === '' && window.innerWidth > 650) {
+    aboutMeSection.className = 'active unhidden-large';
+  } else if (aboutMeSection.className === '' && window.innerWidth <= 650) {
+    aboutMeSection.className = 'active unhidden-small';
+  } else {
+    aboutMeSection.className = '';
+  }
+  aboutMeClosed.className === 'inactive' ? aboutMeClosed.className = '' : aboutMeClosed.className = 'inactive';
 }
 
 aboutButton.addEventListener('click', aboutButtonToggle);
 mainNavAbout.addEventListener('click', aboutButtonToggle);
 mobileNavAbout.addEventListener('click', aboutButtonToggle);
 aboutMeClosed.addEventListener('click', aboutButtonToggle);
+
+/* To monitor for shift from desktop to mobile width in order to adjust about-me margin */
+
+const updateWidth = () => {
+  if (window.innerWidth <= 650 && aboutMeSection.className !== '') {
+    aboutMeSection.className = 'active unhidden-small';
+  } else if (window.innerWidth > 650 && aboutMeSection.className !== '') {
+    aboutMeSection.className = 'active unhidden-large';
+  }
+}
+
+window.addEventListener('resize', updateWidth);

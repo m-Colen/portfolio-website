@@ -9,14 +9,16 @@ html {
   font-size: 100%;
   --header-font: 'Roboto Condensed', Sans-Serif;
   --body-font: 'Cabin', Sans-Serif;
-  --primary-color: rgb(21, 20, 48); 
-  --attention-color: rgb(167, 45, 36); 
+  --primary-color: rgb(21, 20, 48); /* Navy blue */
+  --attention-color: rgb(167, 45, 36); /* Red */
 }
 
 body {
   font-family: var(--body-font);
-  color: #333;
+  background-color: #111117;
+  color: #fff;
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1,
@@ -28,9 +30,12 @@ h6 {
   font-family: var(--header-font);
 }
 
-button {
-  all: unset;
-  cursor: pointer;
+.active {
+  diplay: block;
+}
+
+.inactive {
+  display: none;
 }
 
 /* Nav section */
@@ -56,7 +61,6 @@ nav {
 }
 
 #nav-logo a:hover {
-  border: none;
   text-transform: uppercase;
 }
 
@@ -68,6 +72,7 @@ nav a {
   text-decoration: none;
   color: #fff;
   transition: all 1s;
+  animation: none;
 }
 
 nav a:hover {
@@ -85,7 +90,7 @@ nav a:hover {
 #contact-links {
   display: flex;
   justify-content: flex-end;
-  gap: 2rem;
+  gap: 0 2rem;
   width: calc(100% / 3);
 }
 
@@ -115,9 +120,9 @@ nav a:hover {
   transform: translatey(-.40625rem);
 }
 
-/* To make hamburger menu show on screens 600px or smaller */
+/* To make hamburger menu show on screens 700px or smaller */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   #hamburger-menu {
     display: block;
   }
@@ -127,6 +132,9 @@ nav a:hover {
   #contact-links {
     display: none;
   }
+  #about-container a {
+  margin-top: 6vw;
+}
 }
 
 #nav-links-mobile {
@@ -134,32 +142,31 @@ nav a:hover {
   width: 100%;
   position: absolute;
   top: 2.3rem;
-  right: 0;
+  left: 0;
   padding: 1rem;
-  background-color: #2C43B8;
+  background-color: #2C43B8; /* Light blue */
   margin-top: 0;
 }
 
-.nav-link {
-  margin: 1rem 0;
+#nav-links-mobile li {
+  margin: 4% 0;
 }
 
 /* About section */
 
 #about {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 100vh;
-  margin: 0 12%;
+  padding: 0 12%;
 }
 
 #about-img {
   width: 40vw;
-  max-width: 200px;
+  max-width: 195px;
   border-radius: 50%;
   position: relative;
-  background-color: #111;
 }
 
 #about-img > img {
@@ -168,56 +175,34 @@ nav a:hover {
   position: relative;
 }
 
-#about-me-button {
-  display: block;
-  height: 75px;
-  width: 75px;
-  position: absolute;
-  bottom: 25%;
-  right: -18%;
-  z-index: 1;
-  border-radius: 50%;
-  padding: .25rem;
-  background-color: rgba(30, 30, 30, 95%);
-  color: #fff;
+.button {
+  position: relative;
+  padding: .5rem;
   transition: .5s;
-  animation: buttonPulse 5s infinite ease-out forwards;
+  margin-top: .5rem;
+  font-size: 1.1rem;
+  background-color: #111117;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
 }
 
 #about-me-button:hover {
   background-color: var(--attention-color);
-  transform: scale(1.1);
-  animation: none;
+  color: #fff;
 }
 
 #about-me-button-close {
-  display: none;
-  height: 75px;
-  width: 75px;
   position: absolute;
-  bottom: 25%;
-  right: -18%;
-  z-index: 1;
-  border-radius: 50%;
-  padding: .25rem;
-  background-color: rgb(30, 30, 30);
-  color: #fff;
-  transition: .5s;
-  z-index: 2;
+  top: 0;
+  right: 0;
+  padding: 2%;
+  border: none;
 }
 
 #about-me-button-close:hover {
-  background-color: var(--attention-color);
-  transform: scale(1.1);
-}
-
-@keyframes buttonPulse {
-  0% {
-    
-  }
-  50% {
-    background-color: var(--attention-color);
-  }
+  background-color: #aaa;
+  color: #eee;
 }
 
 #about h1, 
@@ -230,27 +215,25 @@ nav a:hover {
 }
 
 #about-container {
-  width: 50%;
   font-size: 1.3rem;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   text-align: center;
+  overflow: hidden;
+  z-index: 2;
 }
 
 /* CTA button */
 
-#about-container > button {
-  margin-top: 6.5%;
-}
-
 .cta-button {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   padding: .4rem 1rem;
   border: 1.5px solid var(--attention-color);
-  box-shadow: 4px 4px black;
+  box-shadow: 6px 6px 2px #fff;
   transition: all 1s;
+  margin: 2vw;
 }
 
 .cta-button:hover {
@@ -259,30 +242,112 @@ nav a:hover {
   box-shadow: 0 0 white;
 }
 
-#about-me-text {
-  background-color: rgb(90, 22, 18);
-  padding: 2%;
-  color: #fff;
-  display: none;
-  animation: slideIn 1s ease-out;
+#background-divider {
+  position: absolute;
+  background-color: #222;
+  color: #222;
+  height: 110vh;
+  width: 100%;
+  transform: rotate(45deg);
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 14px 14px 10px #fff;
 }
 
-#about-me-text > p {
-  margin-bottom: 2%;
+#background-divider > p {
+  margin-bottom: 3%;
 }
 
-#about-me-text > ul {
-  margin-left: 1rem;
+#background-divider > ul {
+  margin-left: 1.2rem;
 }
 
-/* Animation to slide in about me text */
+@media only screen and (max-width: 650px) {
+  html {
+    font-size: .97rem;
+  }
+  #about h1 {
+    font-size: 2.4rem;
+  }
+}
 
-@keyframes slideIn {
+@media only screen and (max-width: 380px) {
+  .cta-button {
+    font-size: .98rem;
+  }
+}
+
+.unhidden-large {
+  animation: rotateInLarge 2s ease-in forwards;
+}
+
+.unhidden-small {
+  animation: rotateInSmall 1.5s ease-in forwards;
+}
+
+@keyframes rotateInLarge {
   0% {
-    transform: translateY(100vh);
+    position: absolute;
+    background-color: #222;
+    height: 100vh;
+    width: 100%;
+    transform: rotate(50deg);
+    z-index: 1;
+    overflow: hidden;
+  }
+  40% {
+    transform: rotate(25deg);
+    width: 65%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+    margin: 0 5%;
+    transition: all 3s;
+    color: #333;
   }
   100% {
-    transform: translateY(0px);
+    transform: rotate(0);
+    width: 65%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+    margin: 0 5%;
+    transition: all 3s;
+    color: #fff;
+    box-shadow: 10px 10px 2px #fff;
+  }
+}
+
+@keyframes rotateInSmall {
+  0% {
+    position: absolute;
+    background-color: #222;
+    height: 100vh;
+    width: 100%;
+    transform: rotate(50deg);
+    z-index: 1;
+    overflow: hidden;
+  }
+  30% {
+    transform: rotate(25deg);
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+    margin: 0 5%;
+    transition: all 3s;
+    color: #333;
+  }
+  100% {
+    transform: rotate(0);
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+    margin: 0 5%;
+    transition: all 3s;
+    color: #fff;
+    box-shadow: none;
   }
 }
 
@@ -290,94 +355,151 @@ nav a:hover {
   #about {
     flex-direction: column;
     margin: 0;
+    padding: 0;
   }
-  #about-me-text {
-    margin-top: 10%;
-    position: absolute;
-    bottom: 0;
+  #background-divider {
+    width: 100%;
+    margin: 0;
   }
 }
 
 @media only screen and (max-width: 650px) {
-  html {
-    font-size: .95rem;
-  }
-  #about h1 {
-    font-size: 2.5rem;
-  }
-}
-
-@media only screen and (max-width: 380px) {
-  .cta-button {
-    font-size: .7rem;
+  #background-divider {
+    width: 100%;
+    margin: 0 !important;
   }
 }
 
 /* Projects section */
 
 #projects {
-  background: linear-gradient(45deg, #000, #111);
-  padding: 1rem;
+  background: linear-gradient(45deg, #000, #030303);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+  padding: 5%;
   text-align: center;
+  z-index: 2;
+  margin-top: 0;
+  height: 100vh;
 }
 
-#projects > h2 {
-  color: white;
-  margin-bottom: 3%;
+#projects h2 {
+  margin-bottom: 3rem auto;
+  text-decoration: underline #fff;
+  display: block;
 }
 
-/* Skills section */
+#project-carousel {
+  height: 50vh;
+  width: 50%;
+  background-color: #fff;
+  display: block;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  #project-carousel {
+  height: 40vh;
+  width: 60%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #project-carousel {
+  width: 100%;
+  }
+}
+
+/* Tech stack section */
+
+#tech-stacks > h2 {
+  color: #fff;
+}
+
 
 #skills-container {
   display: flex;
   justify-content: center;
-}
-
-#skills-container {
-  display: flex;
   flex-flow: wrap;
+  gap: 5%;
+  color: #e77224; /* Gold */
 }
 
-#skills-container > i {
+#skills-container  i {
   margin-right: 5%;
   margin-bottom: 1rem;
-  color: #e77224;
   width: 50px;
   text-align: center;
+}
+
+.tech-card {
+  display: flex;
+  align-items: center;
 }
 
 /* Skills animations */
 
 .fa-html5 {
-  animation: changeSkillColor 14s infinite;
+  animation: changeSkillColor 18s infinite;
 }
 
 .fa-css3-alt {
-  animation: changeSkillColor 14s 1s infinite;
+  animation: changeSkillColor 18s 3s infinite;
 }
 
 .fa-js {
-  animation: changeSkillColor 14s 2s infinite;
+  animation: changeSkillColor 18s 6s infinite;
 }
 
 .fa-git {
-  animation: changeSkillColor 14s 3s infinite;
+  animation: changeSkillColor 18s 9s infinite;
 }
 
 .fa-github {
-  animation: changeSkillColor 14s 4s infinite;
-}
-
-.fa-chrome {
-  animation: changeSkillColor 14s 5s infinite;
+  animation: changeSkillColor 18s 12s infinite;
 }
 
 .fa-figma {
-  animation: changeSkillColor 14s 6s infinite;
+  animation: changeSkillColor 18s 15s infinite;
 }
 
 @keyframes changeSkillColor {
-  14% {
+  12% {
     color: white;
   }
+}
+
+/* Footer section */
+
+footer {
+  background: var(--primary-color);
+  padding: .5rem 5%;
+  opacity: .95;
+}
+
+footer a {
+  animation: none;
+  color: white;
+}
+
+footer li {
+  list-style-type: none;
+}
+
+#footer-contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: .8rem;
+}
+
+#footer-contact a {
+  animation: none;
+}
+
+#footer-contact a:hover {
+  color: goldenrod;
+  animation: none;
 }
