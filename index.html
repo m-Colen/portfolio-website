@@ -15,15 +15,16 @@
 
   <!--Header section-->
   <header>
+    
     <!--Nav section-->
     <nav>
       <div id="nav-logo">
-        <a href="#" title="Home page">mC_</a>
+        <a href="index.html" title="Home page">mC_</a>
       </div>
       <!--Desktop nav menu-->
       <ul id="nav-links">
         <li class="nav-link"><a id="main-nav-about" href="#about" title="About me">About</a></li>
-        <li class="nav-link"><a href="https://github.com/m-Colen" target="_blank" title="My projects">Projects</a></li>
+        <li class="nav-link"><a href="#projects" title="My projects">Projects</a></li>
       </ul>
       <!--Contact menu-->
       <ul id="contact-links">
@@ -40,7 +41,7 @@
       <!--Mobile nav menu-->
       <ul id="nav-links-mobile">
         <li id="mobile-nav-about" class="nav-link mobile"><a href="#about">About</a></li>
-        <li class="nav-link"><a href="https://github.com/m-Colen" target="_blank">Projects</a></li>
+        <li class="nav-link"><a href="#projects">Projects</a></li>
         <li class="nav-link mobile"><a href="mailto:mzcolen@gmail.com">Contact</a></li>
       </ul>
     </nav>
@@ -58,17 +59,19 @@
         </div>
         <h1>Matt Colen</h1>
         <p>Front End Web Developer</p>
-        <a class="cta-button" href="https://github.com/m-Colen" target="_blank">Check out my projects</a>
-        <button id="about-me-button" class="button" title="Learn more about me">More about me</button>
+        <div id="about-links">
+          <button id="about-me-button" class="button" title="Learn more about me">About</button>
+          <a class="button reverse-button" href="#projects" title="Check out my projects">Projects</a>
+        </div>
       </div>
-      <div id="background-divider">
+      <div id="about-text">
         <p>Hi I'm Matt.</p>
         <p>I'm a front-end web developer who loves to push the boundaries with my designs.</p>
         <p>In my free time, you can find me:</p>
         <ul>
           <li>Bing-watching shows with my wife</li>
           <li>Playing with my fur-babies</li>
-          <li>Noodling on my guitar</li>
+          <li>Noodling on my guitars</li>
           <li>Playing video games</li>
         </ul>
         <button id="about-me-button-close" class="inactive"><i class="fa-solid fa-xmark"></i></button>
@@ -79,40 +82,55 @@
     <section id="projects">
       <div id="projects-container">
         <h2>Projects</h2>
+        <i id="left-arrow" class="fa-solid fa-angle-left fa-3x"></i>
+        <i id="right-arrow" class="fa-solid fa-angle-right fa-3x"></i>
         <div id="project-carousel">
-          
-        </div>
-      </div>
-      <div id="tech-stacks">
-        <h2>Tech Stacks</h2>
-        <div id="skills-container">
-          <div id="html-container" class='tech-card'>
-            <i title="HTML5" class="fab fa-html5 fa-3x"></i>
-            <p>HTML</p>
-          </div>
-          <div id="css-container" class='tech-card'>
-            <i title="CSS3" class="fab fa-css3-alt fa-3x"></i>
-            <p>CSS</p>
-          </div>
-          <div id="js-container" class='tech-card'>
-            <i title="JavaScript" class="fab fa-js fa-3x"></i>
-            <p>JS</p>
-          </div>
-          <div id="git-container" class='tech-card'>
-            <i title="Git" class="fab fa-git fa-3x"></i>
-            <p>Git</p>
-          </div>
-          <div id="gitHub-container" class='tech-card'>
-            <i title="GitHub" class="fab fa-github fa-3x"></i>
-            <div>GitHub</div>
-          </div>
-          <div id="figma-container" class='tech-card'>
-            <i title="Figma" class="fab fa-figma fa-3x"></i>
-            <p>Figma</p>
+          <iframe id="project-display" src="https://m-colen.github.io/number-guessor/" frameborder="0" allowfullscreen>
+             <p>
+              <a href="https://m-colen.github.io/number-guessor/">
+                 Fallback link for browsers that don't support iframes
+              </a>
+            </p>
+          </iframe>
+          <div id="project-summary">
+            <p id="project-summary-text">This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.</p>
+            <a id="project-github-button" class="button" href="https://github.com/m-Colen/number-guessor" target="_blank">GitHub Page</a>
+            <a id="project-live-button" class="button" href="https://m-colen.github.io/number-guessor/" target="_blank">Live View</a>
           </div>
         </div>
       </div>
-      
+  
+    </section>
+    
+    <!-- Tech stack section -->
+    <section id="tech-stack">
+      <h3>Tech Stack</h3>
+      <div id="skills-container">
+        <div id="html-container" class='tech-card'>
+          <i title="HTML5" class="fab fa-html5 fa-2x"></i>
+          <p>HTML</p>
+        </div>
+        <div id="css-container" class='tech-card'>
+          <i title="CSS3" class="fab fa-css3-alt fa-2x"></i>
+          <p>CSS</p>
+        </div>
+        <div id="js-container" class='tech-card'>
+          <i title="JavaScript" class="fab fa-js fa-2x"></i>
+          <p>JS</p>
+        </div>
+        <div id="git-container" class='tech-card'>
+          <i title="Git" class="fab fa-git fa-2x"></i>
+          <p>Git</p>
+        </div>
+        <div id="gitHub-container" class='tech-card'>
+          <i title="GitHub" class="fab fa-github fa-2x github-animation"></i>
+          <div>GitHub</div>
+        </div>
+        <div id="figma-container" class='tech-card'>
+          <i title="Figma" class="fab fa-figma fa-2x"></i>
+          <p>Figma</p>
+        </div>
+      </div>
     </section>
     
   </main>
@@ -120,9 +138,9 @@
   <!-- Footer section -->
   <footer>
     <ul id="footer-contact">
-      <li class="contact-link"><a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-      <li class="contact-link"><a href="https://github.com/m-Colen" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
-      <li class="contact-link"><a href="mailto:mzcolen@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-at"></i></a></li>
+      <li class="contact-link"><a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin fa-2x"></i></a></li>
+      <li class="contact-link"><a href="https://github.com/m-Colen" target="_blank" title="GitHub"><i class="fa-brands fa-github fa-2x"></i></a></li>
+      <li class="contact-link"><a href="mailto:mzcolen@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-at fa-2x"></i></a></li>
     </ul>
   </footer>
 
