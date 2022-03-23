@@ -9,16 +9,20 @@ html {
   font-size: 100%;
   --header-font: 'Roboto Condensed', Sans-Serif;
   --body-font: 'Cabin', Sans-Serif;
-  --primary-color: rgb(21, 20, 48); /* Navy blue */
-  --secondary-color: #e57022; /* Gold */
-  --button-color: #ca6011;
+  --primary-color: #541212; 
+  --hero-color: #0F0E0E; 
+  --sub-section-color: #EEEEEE;
+  --secondary-color: var(--primary-color);
+  --button-color: var(--primary-color);
+  --sub-section-header-color: #FAF3E0;
+  --highlight-color: #8B9A46;
 }
 
 body {
   font-family: var(--body-font);
-  background-color: #111117;
-  color: #fff;
+  background-color: var(--hero-color);
   margin: 0;
+  color: #FAF3E0;
 }
 
 h1,
@@ -70,7 +74,7 @@ nav {
 
 #nav-logo {
   font-family: var(--header-font);
-  font-size: 2rem;
+  font-size: 1.3rem;
   width: calc(100% / 3);
 }
 
@@ -89,7 +93,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--secondary-color);
+  color: var(--highlight-color);
 }
 
 #nav-links {
@@ -97,13 +101,13 @@ nav a:hover {
   justify-content: center;
   gap: 0 2rem;
   width: calc(100% / 3);
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 
 #contact-links {
   display: flex;
   justify-content: flex-end;
-  gap: 0 2rem;
+  gap: 1.25rem;
   width: calc(100% / 3);
 }
 
@@ -133,9 +137,9 @@ nav a:hover {
   transform: translatey(-.40625rem);
 }
 
-/* Makes hamburger menu only show on screens 700px or smaller & hides desktop nav & contact links */
+/* Makes hamburger menu only show on screens 825px or smaller & hides desktop nav & contact links */
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 825px) {
   #hamburger-menu {
     display: block;
   }
@@ -154,11 +158,19 @@ nav a:hover {
   display: none;
   width: 100%;
   position: absolute;
-  top: 2.3rem;
+  top: 1.5rem;
   left: 0;
   padding: .5rem 1rem;
-  background-color: #2C43B8; /* Light blue */
+  background-color: var(--sub-section-color);
   margin-top: 0;
+}
+
+#nav-links-mobile a {
+  color: #333;
+}
+
+#nav-links-mobile a:hover {
+  color: var(--highlight-color);
 }
 
 #nav-links-mobile li {
@@ -185,6 +197,8 @@ nav a:hover {
   width: 100%;
   border-radius: 50%;
   position: relative;
+  opacity: .95;
+  box-shadow: 0 2px 10px #3d3d3d;
 }
 
 #about-links {
@@ -202,10 +216,11 @@ nav a:hover {
   background-color: transparent;
   width: 7rem;
   padding: .25rem;
-  border: 1.5px solid var(--button-color);
+  border: 1.5px solid var(--highlight-color);
   box-shadow: 6px 6px 2px #fff;
-  transition: all 1s;
+  transition: all .7s;
   text-align: center;
+  position: relative;
 }
 
 .reverse-button {
@@ -213,21 +228,32 @@ nav a:hover {
 }
 
 .button:hover {
-  background: var(--button-color);
+  background: var(--highlight-color);
   box-shadow: 0 0 white;
+  color: #0F0E0E;
+}
+
+.left:hover {
+  top: 4px;
+  left: 4px;
+}
+
+.right:hover {
+  top: 4px;
+  right: 4px;
 }
 
 #about-me-button-close {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 2%;
+  padding: .4rem;
   border: none;
 }
 
 #about-me-button-close:hover {
-  background-color: #999;
-  color: #eee;
+  background-color: var(--primary-color);
+  color: #fff;
 }
 
 #about h1, 
@@ -252,7 +278,7 @@ nav a:hover {
 #about-text {
   position: absolute;
   top: 0;
-  color: #111;
+  color: var(--hero-color);
   height: 50vh;
   z-index: 1;
 }
@@ -265,7 +291,7 @@ nav a:hover {
   margin-left: 1.2rem;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 1175px) {
   html {
     font-size: .97rem;
   }
@@ -290,6 +316,7 @@ nav a:hover {
     height: 100vh;
     width: 100%;
     transform: rotate(50deg);
+    display: block;
   }
   40% {
     transform: rotate(25deg);
@@ -297,8 +324,10 @@ nav a:hover {
     height: auto;
     position: relative;
     padding: 1rem;
+    margin-left: 5%;
     margin: 0 5%;
     transition: all 3s;
+    display: block;
   }
   100% {
     transform: rotate(0);
@@ -306,10 +335,11 @@ nav a:hover {
     height: auto;
     position: relative;
     padding: 1rem;
-    margin: 0 2%;
+    margin-left: 3%;
     transition: all 3s;
     color: #fff;
-    box-shadow: 10px 10px 2px #fff;
+    box-shadow: 10px 10px 5px #fff;
+    display: block;
   }
 }
 
@@ -321,7 +351,7 @@ nav a:hover {
   }
   80% {
     transform: rotate(0);
-    width: 85%;
+    width: 100%;
     height: auto;
     position: relative;
     color: #fff;
@@ -329,7 +359,7 @@ nav a:hover {
   }
   100% {
     transform: rotate(0);
-    width: 85%;
+    width: 100%;
     height: auto;
     position: relative;
     color: #fff;
@@ -340,46 +370,62 @@ nav a:hover {
   }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1175px) {
   #about {
     flex-direction: column;
     margin: 0;
-    padding: 0;
+    padding: 0 12%;
   }
 }
 
 /* Projects section */
 
 #projects {
-  background: linear-gradient(45deg, #080808, #111);
+  background: var(--sub-section-color);
+  color: #333;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   position: relative;
   padding: 0 12%;
+  margin: 0;
   text-align: center;
   z-index: 2;
-  margin-top: 0;
   height: 100vh;
-  border-radius: 20px 20px 0 0;
-  border-top: 1px solid #999;
+  border-radius: 5px 5px 0 0;
+}
+
+#projects-container {
+  margin: 0;
+  padding: 0;
 }
 
 #projects h2 {
-  margin-top: .5rem;
   border-bottom: 10px solid #999;
   font-size: 2rem;
+  color: #333;
 }
 
-#projects-container > i {
-  padding: .3rem 1rem;
+#arrows {
+  margin-bottom: .5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+#arrows > i {
+  padding: .5rem 1rem;
   cursor: pointer;
   transition: all .5s;
+  background-color: #1d1d1d;
+  color: #fff;
+  border-radius: 4px;
 }
 
-#projects-container > i:hover {
-  color: var(--secondary-color);
-  transform: scale(1.2);
+#arrows > i:hover {
+  color: var(--highlight-color);
+  transform: scale(1.05);
+  background-color: #222;
 }
 
 #project-carousel {
@@ -392,21 +438,14 @@ nav a:hover {
 #project-carousel > iframe {
   height: 100%;
   width: 100%;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
 }
 
 #project-summary {
   text-align: left;
   margin: 0;
-  padding: 4%;
+  padding: .5%;
   background-color: transparent;
-  color: white;
-}
-
-#project-summary > a {
-  padding: .5rem;
-  font-size: 1.1rem;
-  margin-right: 1rem;
 }
 
 #project-summary p {
@@ -414,13 +453,17 @@ nav a:hover {
   margin-bottom: 2rem;
 }
 
-@media only screen and (max-width: 700px) {
-  #projects {
-    padding: 0 6%;
-  }
-  #project-summary {
-    padding: 6%;
-  }
+#project-summary .button {
+  font-size: 1rem;
+  margin-right: .5rem;
+  color: #333;
+  box-shadow: none;
+}
+
+#project-summary .button:hover {
+  background-color: var(--hero-color);
+  color: #fff;
+  bottom: 3px;
 }
 
 /* Tech stack section */
@@ -454,6 +497,24 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: .2rem;
+}
+
+@media only screen and (max-width: 825px) {
+  #projects {
+    padding: 0 4%;
+  }
+  .button {
+    font-size: 1rem;
+  }
+  #tech-stack {
+    padding: 0 4%;
+  }
+  nav {
+    padding: 0 4%; 
+  }
+  #about {
+    padding: 0 4%;
+  }
 }
 
 /* Skills animations */
@@ -511,9 +572,9 @@ footer li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 #footer-contact a:hover {
-  color: var(--secondary-color);
+  color: var(--highlight-color);
 }
