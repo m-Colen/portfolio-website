@@ -28,9 +28,9 @@
       </ul>
       <!--Contact menu-->
       <ul id="contact-links">
-        <li class="contact-link"><a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin fa-2x"></i></a></li>
-        <li class="contact-link"><a href="https://github.com/m-Colen" target="_blank" title="GitHub"><i class="fa-brands fa-github fa-2x"></i></a></li>
-        <li class="contact-link"><a href="mailto:mzcolen@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-at fa-2x"></i></a></li>
+        <li class="contact-link"><a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" title="LinkedIn"><i id="li-nav" class="fa-brands fa-linkedin"></i></a></li>
+        <li class="contact-link"><a href="https://github.com/m-Colen" target="_blank" title="GitHub"><i id="gh-nav" class="fa-brands fa-github"></i></a></li>
+        <li class="contact-link"><a href="mailto:mzcolen@gmail.com" target="_blank" title="Email"><i id="email-nav" class="fa-solid fa-at"></i></a></li>
       </ul>
       <!--Hamburger nav icon-->
       <div id="hamburger-menu">
@@ -60,8 +60,8 @@
         <h1>Matt Colen</h1>
         <p>Front End Web Developer</p>
         <div id="about-links">
-          <button id="about-me-button" class="button" title="Learn more about me">About</button>
-          <a class="button reverse-button" href="#projects" title="Check out my projects">Projects</a>
+          <button id="about-me-button" class="button left" title="Learn more about me">About</button>
+          <a class="button reverse-button right" href="#projects" title="Check out my projects">Projects</a>
         </div>
       </div>
       <div id="about-text">
@@ -82,8 +82,10 @@
     <section id="projects">
       <div id="projects-container">
         <h2>Projects</h2>
-        <i id="left-arrow" class="fa-solid fa-angle-left fa-3x"></i>
-        <i id="right-arrow" class="fa-solid fa-angle-right fa-3x"></i>
+        <div id="arrows">
+          <i id="left-arrow" class="fa-solid fa-angle-left"></i>
+          <i id="right-arrow" class="fa-solid fa-angle-right"></i>
+        </div>
         <div id="project-carousel">
           <iframe id="project-display" src="https://m-colen.github.io/gibson-landing/" frameborder="0" allowfullscreen>
              <p>
@@ -93,7 +95,7 @@
             </p>
           </iframe>
           <div id="project-summary">
-            <p id="project-summary-text">This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.</p>
+            <p id="project-summary-text">This project is my attempt at re-creating the main Gibson Guitars landing page. **In Progress</p>
             <a id="project-github-button" class="button" href="https://github.com/m-Colen/gibson-landing" target="_blank">GitHub Page</a>
             <a id="project-live-button" class="button" href="https://m-colen.github.io/gibson-landing/" target="_blank">Live View</a>
           </div>
@@ -138,9 +140,9 @@
   <!-- Footer section -->
   <footer>
     <ul id="footer-contact">
-      <li class="contact-link"><a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin fa-2x"></i></a></li>
-      <li class="contact-link"><a href="https://github.com/m-Colen" target="_blank" title="GitHub"><i class="fa-brands fa-github fa-2x"></i></a></li>
-      <li class="contact-link"><a href="mailto:mzcolen@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-at fa-2x"></i></a></li>
+      <li class="contact-link"><a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+      <li class="contact-link"><a href="https://github.com/m-Colen" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+      <li class="contact-link"><a href="mailto:mzcolen@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-at"></i></a></li>
     </ul>
   </footer>
 
