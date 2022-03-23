@@ -15,10 +15,10 @@ const hamMenuToggle = () => {
 
 hamMenu.addEventListener('click', hamMenuToggle);
 
-// Hides mobile nav when width passes 700px threshold
+// Hides mobile nav when width passes 825px threshold
 
 const resetNav = () => {
-  if (window.innerWidth >= 700) {
+  if (window.innerWidth >= 825) {
     mobileNavMenu.style.display = 'none';
     topBun.className = 'hamburger-item';
     bottomBun.className = 'hamburger-item';
@@ -37,9 +37,9 @@ const mobileNavAbout = document.getElementById('mobile-nav-about');
 
 const aboutButtonToggle = () => {
   // To toggle "about me" text
-  if (aboutMeSection.className === '' && window.innerWidth > 650) {
+  if (aboutMeSection.className === '' && window.innerWidth > 1175) {
     aboutMeSection.className = 'active unhidden-large';
-  } else if (aboutMeSection.className === '' && window.innerWidth <= 650) {
+  } else if (aboutMeSection.className === '' && window.innerWidth <= 1175) {
     aboutMeSection.className = 'active unhidden-small';
   } else {
     aboutMeSection.className = '';
@@ -52,12 +52,12 @@ mainNavAbout.addEventListener('click', aboutButtonToggle);
 mobileNavAbout.addEventListener('click', aboutButtonToggle);
 aboutMeClosed.addEventListener('click', aboutButtonToggle);
 
-/* To monitor for shift from desktop to mobile width in order to adjust about-me margin */
+/* To monitor for shift from desktop to tablet/mobile width in order to adjust about-me margin */
 
 const updateWidth = () => {
-  if (window.innerWidth <= 650 && aboutMeSection.className !== '') {
+  if (window.innerWidth <= 1175 && aboutMeSection.className !== '') {
     aboutMeSection.className = 'active unhidden-small';
-  } else if (window.innerWidth > 650 && aboutMeSection.className !== '') {
+  } else if (window.innerWidth > 1175 && aboutMeSection.className !== '') {
     aboutMeSection.className = 'active unhidden-large';
   }
 }
@@ -79,7 +79,7 @@ const liveButton = document.getElementById('project-live-button');
 // Arr for live sites
 
 const projectSites = ['https://m-colen.github.io/gibson-landing/','https://m-colen.github.io/number-guessor/'];
-const projectDescriptions = ['This project is my attempt at re-creating the main Gibson Guitars landing page.','This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.'];
+const projectDescriptions = ['This project is my attempt at re-creating the main Gibson Guitars landing page. **In Progress','This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.'];
 const githubPageLinks = ['https://github.com/m-Colen/gibson-landing','https://github.com/m-Colen/number-guessor'];
 const liveProjectLinks = ['https://m-colen.github.io/gibson-landing/','https://m-colen.github.io/number-guessor/'];
 
