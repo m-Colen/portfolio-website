@@ -78,10 +78,10 @@ const liveButton = document.getElementById('project-live-button');
 
 // Arr for live sites
 
-const projectSites = ['https://m-colen.github.io/number-guessor/', 'https://github.com/m-Colen/number-guessor'];
-const projectDescriptions = ['This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.', 'This is a JS project for working with DNA gener sequences.'];
-const githubPageLinks = ['https://github.com/m-Colen/number-guessor', 'https://github.com/m-Colen/mysterious-organism'];
-const liveProjectLinks = ['https://m-colen.github.io/number-guessor/', 'https://github.com/m-Colen/mysterious-organism'];
+const projectSites = ['https://m-colen.github.io/gibson-landing/','https://m-colen.github.io/number-guessor/'];
+const projectDescriptions = ['This project is my attempt at re-creating the main Gibson Guitars landing page.','This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.'];
+const githubPageLinks = ['https://github.com/m-Colen/gibson-landing','https://github.com/m-Colen/number-guessor'];
+const liveProjectLinks = ['https://m-colen.github.io/gibson-landing/','https://m-colen.github.io/number-guessor/'];
 
 let projectNumber = 0;
 
