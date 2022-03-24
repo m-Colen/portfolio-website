@@ -16,7 +16,6 @@ const hamMenuToggle = () => {
 hamMenu.addEventListener('click', hamMenuToggle);
 
 // Hides mobile nav when width passes 825px threshold
-
 const resetNav = () => {
   if (window.innerWidth >= 825) {
     mobileNavMenu.style.display = 'none';
@@ -29,6 +28,7 @@ window.addEventListener('resize', resetNav);
 
 /* About me section */
 
+// Adds functionality to the "about" button to show/hide text
 const aboutMeSection = document.getElementById('about-text');
 const aboutButton = document.getElementById('about-me-button');
 const aboutMeClosed = document.getElementById('about-me-button-close')
@@ -37,12 +37,12 @@ const mobileNavAbout = document.getElementById('mobile-nav-about');
 
 const aboutButtonToggle = () => {
   // To toggle "about me" text
-  if (aboutMeSection.className === '' && window.innerWidth > 1175) {
+  if (aboutMeSection.className === 'inactive' && window.innerWidth > 1175) {
     aboutMeSection.className = 'active unhidden-large';
-  } else if (aboutMeSection.className === '' && window.innerWidth <= 1175) {
+  } else if (aboutMeSection.className === 'inactive' && window.innerWidth <= 1175) {
     aboutMeSection.className = 'active unhidden-small';
   } else {
-    aboutMeSection.className = '';
+    aboutMeSection.className = 'inactive';
   }
   aboutMeClosed.className === 'inactive' ? aboutMeClosed.className = '' : aboutMeClosed.className = 'inactive';
 }
@@ -52,12 +52,11 @@ mainNavAbout.addEventListener('click', aboutButtonToggle);
 mobileNavAbout.addEventListener('click', aboutButtonToggle);
 aboutMeClosed.addEventListener('click', aboutButtonToggle);
 
-/* To monitor for shift from desktop to tablet/mobile width in order to adjust about-me margin */
-
+/* To monitor for shift from desktop to tablet/mobile width in order to adjust about-me text margin */
 const updateWidth = () => {
-  if (window.innerWidth <= 1175 && aboutMeSection.className !== '') {
+  if (window.innerWidth <= 1175 && aboutMeSection.className !== 'inactive') {
     aboutMeSection.className = 'active unhidden-small';
-  } else if (window.innerWidth > 1175 && aboutMeSection.className !== '') {
+  } else if (window.innerWidth > 1175 && aboutMeSection.className !== 'inactive') {
     aboutMeSection.className = 'active unhidden-large';
   }
 }
@@ -70,21 +69,22 @@ window.addEventListener('resize', updateWidth);
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
 
-// What I want to change
+// Variables needing updated on each project change
 const projectDisplay = document.getElementById('project-display');
 const projectSummaryText = document.getElementById('project-summary-text');
 const githubButton = document.getElementById('project-github-button');
 const liveButton = document.getElementById('project-live-button');
 
-// Arr for live sites
-
+// Arrays for project data
 const projectSites = ['https://m-colen.github.io/gibson-landing/','https://m-colen.github.io/number-guessor/'];
 const projectDescriptions = ['This project is my attempt at re-creating the main Gibson Guitars landing page. **In Progress','This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.'];
 const githubPageLinks = ['https://github.com/m-Colen/gibson-landing','https://github.com/m-Colen/number-guessor'];
 const liveProjectLinks = ['https://m-colen.github.io/gibson-landing/','https://m-colen.github.io/number-guessor/'];
 
+// To increment/decrement project count on each interaction 
 let projectNumber = 0;
 
+// Moves to next project in arr
 const moveRight = () => {
   projectNumber < projectSites.length - 1 ? projectNumber++ : projectNumber = 0;
   projectDisplay.setAttribute('src', projectSites[projectNumber]);
@@ -93,6 +93,7 @@ const moveRight = () => {
   liveButton.setAttribute('href', liveProjectLinks[projectNumber]);
 };
 
+// Moves to previous project in arr
 const moveLeft = () => {
   projectNumber >= 1 ? projectNumber-- : projectNumber = projectSites.length - 1;
   projectDisplay.setAttribute('src', projectSites[projectNumber]);
