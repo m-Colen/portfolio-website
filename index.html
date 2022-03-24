@@ -42,7 +42,7 @@
       <ul id="nav-links-mobile">
         <li id="mobile-nav-about" class="nav-link mobile"><a href="#about">About</a></li>
         <li class="nav-link"><a href="#projects">Projects</a></li>
-        <li class="nav-link mobile"><a href="mailto:mzcolen@gmail.com">Contact</a></li>
+        <li class="nav-link mobile"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     
@@ -138,7 +138,7 @@
     
     <!-- Tech stack section -->
     <section id="tech-stack">
-      <h3>Tech Stack</h3>
+      <h3>Tech stack</h3>
       <div id="skills-container">
         <div id="html-container" class='tech-card'>
           <i title="HTML5" class="fab fa-html5 fa-2x"></i>
@@ -165,6 +165,19 @@
           <p>Figma</p>
         </div>
       </div>
+    </section>
+    
+    <!-- Contact section -->
+    <section id="contact">
+      <h3>Contact me</h3>
+      <form method="POST" action="contact-form-process.php">
+        <label for="Name">Your name</label>
+        <input type="text" id="Name" name="Name" required>
+        <label for="Email">Your email address</label>
+        <input type="email" id="Email" name="Email" required>
+        <label for="Message">Your message</label>
+        <textarea id="Message" name="Message" rows="6" maxlength="3000" required></textarea>
+        <button type="submit" class="button contact-button">Send</button>
     </section>
     
   </main>
