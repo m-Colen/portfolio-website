@@ -30,7 +30,7 @@
       <ul id="contact-links">
         <li class="contact-link"><a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" title="LinkedIn"><i id="li-nav" class="fa-brands fa-linkedin"></i></a></li>
         <li class="contact-link"><a href="https://github.com/m-Colen" target="_blank" title="GitHub"><i id="gh-nav" class="fa-brands fa-github"></i></a></li>
-        <li class="contact-link"><a href="mailto:mzcolen@gmail.com" target="_blank" title="Email"><i id="email-nav" class="fa-solid fa-at"></i></a></li>
+        <li class="contact-link"><a href="#contact" title="Email"><i id="email-nav" class="fa-solid fa-at"></i></a></li>
       </ul>
       <!--Hamburger nav icon-->
       <div id="hamburger-menu">
@@ -169,15 +169,18 @@
     
     <!-- Contact section -->
     <section id="contact">
-      <h3>Contact me</h3>
-      <form method="POST" action="mailto:mzcolen@gmail.com">
-        <label for="Name">Your name</label>
-        <input type="text" id="Name" name="Name" required>
-        <label for="Email">Your email address</label>
-        <input type="email" id="Email" name="Email" required>
-        <label for="Message">Your message</label>
-        <textarea id="Message" name="Message" rows="6" maxlength="3000" required></textarea>
-        <button type="submit" class="button contact-button">Send</button>
+      <form method="POST" action="">
+        <fieldset>
+          <legend>Contact me</legend>
+          <label for="Name">Your name</label>
+          <input type="text" id="Name" name="Name" required>
+          <label for="Email">Your email address</label>
+          <input type="email" id="Email" name="Email" required>
+          <label for="Message">Your message</label>
+          <textarea id="Message" name="Message" rows="6" maxlength="3000" required></textarea>
+          <button type="submit" class="button contact-button">Send</button>
+        </fieldset>
+      </form>
     </section>
     
   </main>
@@ -187,11 +190,10 @@
     <ul id="footer-contact">
       <li class="contact-link"><a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
       <li class="contact-link"><a href="https://github.com/m-Colen" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
-      <li class="contact-link"><a href="mailto:mzcolen@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-at"></i></a></li>
     </ul>
   </footer>
 
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>
