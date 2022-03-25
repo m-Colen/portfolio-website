@@ -362,7 +362,7 @@ nav a:hover {
     height: auto;
     position: relative;
     box-shadow: none;
-    padding: 1.25rem 0;
+    padding: 1rem 0;
     border-top: 1px solid #FAF3E0;
     border-bottom: 1px solid #FAF3E0;
   }
@@ -740,16 +740,24 @@ nav a:hover {
 /* Contact form section */
 
 #contact {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
 }
 
 #contact form {
-  padding-top: 2.5vh;
+  max-width: 100%;
 }
 
-#contact label {
+#contact legend {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+#contact fieldset {
+  padding: 1rem;
+  width: 100%;
   display: block;
+  margin: auto;
+  border-radius: 5px;
 }
 
 #contact input,
@@ -765,11 +773,18 @@ nav a:hover {
   border-radius: 5px;
   margin-top: 2px;
   margin-bottom: 12px;
+  display: block;
 }
 
 .contact-button {
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: block;
+}
+
+@media only screen and (min-width: 1175px) {
+  #contact fieldset {
+    width: 70%;
+  }
 }
 
 /* Footer section */
