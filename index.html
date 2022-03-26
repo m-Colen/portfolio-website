@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://kit.fontawesome.com/972df6eb1d.js" crossorigin="anonymous"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -169,7 +170,7 @@
     
     <!-- Contact section -->
     <section id="contact">
-      <form method="POST" action="http://localhost:8888/mail.php">
+      <form method="POST" action="https://submit-form.com/DrgOInqq">
         <fieldset>
           <legend>Contact me</legend>
           <label for="name">Your name</label>
@@ -178,6 +179,8 @@
           <input type="email" id="email" name="email" required>
           <label for="message">Your message</label>
           <textarea id="message" name="message" rows="6" maxlength="3000" required></textarea>
+          <div class="g-recaptcha" data-sitekey="6LeF4RYfAAAAAJ8rO2JVijmjpl9L6fuoG3J77ig-"></div>
+          <br/>
           <button type="submit" class="button contact-button">Send</button>
         </fieldset>
       </form>
