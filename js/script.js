@@ -22,7 +22,7 @@ const resetNav = () => {
     topBun.className = 'hamburger-item';
     bottomBun.className = 'hamburger-item';
   }
-}
+};
 
 window.addEventListener('resize', resetNav);
 
@@ -34,6 +34,7 @@ const aboutButton = document.getElementById('about-me-button');
 const aboutMeClosed = document.getElementById('about-me-button-close')
 const mainNavAbout = document.getElementById('main-nav-about');
 const mobileNavAbout = document.getElementById('mobile-nav-about');
+const aboutCard = document.getElementById('about-card');
 
 const aboutButtonToggle = () => {
   // To toggle "about me" text
@@ -45,7 +46,8 @@ const aboutButtonToggle = () => {
     aboutMeSection.className = 'inactive';
   }
   aboutMeClosed.className === 'inactive' ? aboutMeClosed.className = '' : aboutMeClosed.className = 'inactive';
-}
+  aboutCard.className === '' ? aboutCard.className = 'about-card-minimal' : aboutCard.className = '';
+};
 
 aboutButton.addEventListener('click', aboutButtonToggle);
 mainNavAbout.addEventListener('click', aboutButtonToggle);
@@ -59,7 +61,7 @@ const updateWidth = () => {
   } else if (window.innerWidth > 1175 && aboutMeSection.className !== 'inactive') {
     aboutMeSection.className = 'active unhidden-large';
   }
-}
+};
 
 window.addEventListener('resize', updateWidth);
 

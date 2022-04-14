@@ -48,6 +48,7 @@ h3 {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 body::-webkit-scrollbar {
@@ -197,6 +198,31 @@ nav a:hover {
   height: 100vh;
 }
 
+#about-container {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  font-size: 1.2rem;
+  text-align: left;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#about-card {
+  display: flex;
+  flex-flow: wrap;
+  gap: 2%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-card-minimal {
+  transform: scale(.85);
+  text-align: left;
+}
+
 #about-img > img {
   width: 20vw;
   height: 20vw;
@@ -206,34 +232,45 @@ nav a:hover {
   max-width: 175px;
   object-fit: cover;
   border-radius: 50%;
-  opacity: .99;
 }
 
-.about-card-minimal {
-  transform: scale(.7);
+#about h1, 
+#about p {
+  margin: 0;
+}
+
+#about h1 {
+  font-size: 4rem;
+  color: var(--highlight-color);
 }
 
 #about-links {
   display: flex;
   justify-content: center;
-  gap: 15%;
-  margin: 1rem 0;
+  gap: 10%;
+  margin-top: 1rem;
+  margin-bottom: 1%;
 }
 
+/* Button styling */
+
 .button {
-  curson: pointer;
+  cursor: pointer;
   text-decoration: none;
   color: #FAF3E0;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   background-color: var(--hero-color);
+  border: 1px solid var(--highlight-color);
   opacity: .95;
   width: 7rem;
   padding: .25rem;
-  border: 1.5px solid var(--highlight-color);
   box-shadow: 6px 6px 2px #FAF3E0;
-  transition: all .7s;
+  transition: all .8s;
   text-align: center;
   position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .reverse-button {
@@ -247,75 +284,34 @@ nav a:hover {
 }
 
 .left:hover {
-  top: 4px;
-  left: 4px;
+  top: 6px;
+  left: 6px;
 }
 
 .right:hover {
-  top: 4px;
-  right: 4px;
+  top: 6px;
+  left: -6px;
 }
 
 #about-me-button-close {
   position: absolute;
   top: 0;
   right: 0;
-  padding: .1rem .3rem;
-  border: none;
-  border-radius: 2px;
+  padding: 0 .3rem;
 }
 
 #about-me-button-close:hover {
-  background-color: var(--primary-color);
-  color: #FAF3E0;
+  background-color: var(--highlight-color);
+  transform: scale(1.1);
 }
 
-#about h1, 
-#about p {
-  margin: .05rem 0;
-}
-
-#about h1 {
-  font-size: 3.7rem;
-  color: var(--highlight-color);
-}
-
-@media only screen and (max-width: 485px) {
-  #about-banner > h1,
-  #about-banner > p {
-    text-align: center;
-  }
-}
-
-#about-container {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  gap: 4%;
-  font-size: 1.2rem;
-  text-align: left;
-  overflow: hidden;
-  z-index: 2;
-}
-
-#about-card {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5vw;
-}
+/* About-me text section */
 
 #about-text {
-  width: 100%;
-  padding: 0 !important;
-  z-index: 1;
-  color: #FAF3E0;
-  background-color: var(--hero-color);
-  opacity: .95;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  padding: 1rem 0;
+  color: #fff;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  opacity: .975;
 }
 
 #about-text > p {
@@ -324,6 +320,7 @@ nav a:hover {
 
 #about-text > ul {
   margin-left: 1.2rem;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 1175px) {
@@ -352,14 +349,10 @@ nav a:hover {
   0% {
     position: relative;
     bottom: 100%;
-    padding: 0 12%;
-    width: 100%;
   }
   100% {
     position: relative;
-    bottom: 5%;
-    padding: 0 12%;
-    width: 100%;
+    bottom: 0;
   }
 }
 
@@ -367,14 +360,10 @@ nav a:hover {
   0% {
     position: relative;
     bottom: 100%;
-    padding: 0 4%;
-    width: 100%;
   }
   100% {
     position: relative;
-    bottom: 5%;
-    padding: 0 4%;
-    width: 100%;
+    bottom: 0;
   }
 }
 
@@ -388,28 +377,24 @@ nav a:hover {
   }
 }
 
-/* Falling stars */
+/* Falling snow */
 
-#falling-stars {
+#falling-snow {
   position: absolute;
   top: 0;
   height: 100vh;
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
 }
 
-.star {
+.snow {
   height: 4px;
   width: 4px;
   border-radius: 50%;
   background-color: var(--hero-color);
   position: absolute;
-  animation: fallingStars 8s infinite linear;
-}
-
-.star-special {
-  animation: pulse 6s infinite forwards linear, fallingStars 8s infinite linear;
+  animation: fallingSnow 8s infinite linear;
 }
 
 #line-1 {
@@ -567,7 +552,7 @@ nav a:hover {
   left: 4%;
 }
 
-@keyframes fallingStars {
+@keyframes fallingSnow {
   0% {
     top: 0;
     background-color: var(--hero-color);
@@ -620,8 +605,10 @@ nav a:hover {
 /* Projects section */
 
 #projects {
-  background: var(--sub-section-color);
-  color: #333;
+  padding-top: 3.75rem;
+  padding-bottom: 1.5rem;
+  background: var(--hero-color);
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -629,27 +616,23 @@ nav a:hover {
   margin: 0;
   text-align: center;
   z-index: 2;
-  height: 100vh;
   border-radius: 5px 5px 0 0;
 }
 
-#projects-container {
-  margin: 0;
-  padding: 0;
-}
-
 #projects h2 {
-  padding-top: .5rem;
-  border-bottom: 10px solid #999;
-  font-size: 2rem;
-  color: #333;
+  border-bottom: 5px solid #999;
+  margin: 0;
+  font-size: 1.8rem;
+  color: #fff;
 }
 
 #arrows {
-  margin-bottom: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   display: flex;
-  gap: 1rem;
   justify-content: center;
+  gap: 5%;
+  box-shadow: 5px 5px 6px black;
 }
 
 #arrows > i {
@@ -668,7 +651,7 @@ nav a:hover {
 }
 
 #project-carousel {
-  height: 70vh;
+  height: 85vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -678,36 +661,28 @@ nav a:hover {
   height: 100%;
   width: 100%;
   border-radius: 5px;
+  border-top: 10px solid #999;
+  border-bottom: 10px solid #999;
 }
 
 #project-summary {
   text-align: left;
-  margin: 0;
-  padding: .5%;
-  background-color: transparent;
 }
 
-#project-summary p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+#project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%;
 }
 
-#project-summary .button {
-  font-size: 1rem;
-  margin-right: .5rem;
-  color: #FAF3E0;
-  box-shadow: none;
-}
-
-#project-summary .button:hover {
-  background-color: var(--hero-color);
-  color: #FAF3E0;
-  bottom: 3px;
+.project-button {
+  font-size: .8rem;
 }
 
 /* Tech stack section */
 
 #tech-stack {
+  padding-top: 3rem;
   text-align: center;
 }
 
@@ -782,7 +757,8 @@ nav a:hover {
 /* Contact form section */
 
 #contact {
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 #contact form {
