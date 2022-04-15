@@ -15,6 +15,15 @@ const hamMenuToggle = () => {
 
 hamMenu.addEventListener('click', hamMenuToggle);
 
+// To hide mobile nav menu on selection 
+const mobileAbout = document.getElementById('about-m');
+const mobileProjects = document.getElementById('projects-m');
+const mobileContact = document.getElementById('contact-m');
+
+mobileAbout.addEventListener('click', hamMenuToggle);
+mobileProjects.addEventListener('click', hamMenuToggle);
+mobileContact.addEventListener('click', hamMenuToggle);
+
 // Hides mobile nav when width passes 825px threshold
 const resetNav = () => {
   if (window.innerWidth >= 825) {
@@ -33,7 +42,7 @@ const aboutMeSection = document.getElementById('about-text');
 const aboutButton = document.getElementById('about-me-button');
 const aboutMeClosed = document.getElementById('about-me-button-close')
 const mainNavAbout = document.getElementById('main-nav-about');
-const mobileNavAbout = document.getElementById('mobile-nav-about');
+const mobileNavAbout = document.getElementById('about-m');
 const aboutCard = document.getElementById('about-card');
 
 const aboutButtonToggle = () => {
@@ -53,17 +62,6 @@ aboutButton.addEventListener('click', aboutButtonToggle);
 mainNavAbout.addEventListener('click', aboutButtonToggle);
 mobileNavAbout.addEventListener('click', aboutButtonToggle);
 aboutMeClosed.addEventListener('click', aboutButtonToggle);
-
-/* To monitor for shift from desktop to tablet/mobile width in order to adjust about-me text margin */
-const updateWidth = () => {
-  if (window.innerWidth <= 1175 && aboutMeSection.className !== 'inactive') {
-    aboutMeSection.className = 'active unhidden-small';
-  } else if (window.innerWidth > 1175 && aboutMeSection.className !== 'inactive') {
-    aboutMeSection.className = 'active unhidden-large';
-  }
-};
-
-window.addEventListener('resize', updateWidth);
 
 /* Project carousel */
 
