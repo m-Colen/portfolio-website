@@ -94,22 +94,10 @@ const githubButton = document.getElementById("project-github-button");
 const liveButton = document.getElementById("project-live-button");
 
 // Arrays for project data
-const projectSites = [
-  "https://m-colen.github.io/zen-coffee/",
-  "https://m-colen.github.io/number-guessor/",
-];
-const projectDescriptions = [
-  "This project is the landing page for a fictional coffee shop called Zen Coffee. **In Progress",
-  "This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.",
-];
-const githubPageLinks = [
-  "https://github.com/m-Colen/zen-coffee",
-  "https://github.com/m-Colen/number-guessor",
-];
-const liveProjectLinks = [
-  "https://m-colen.github.io/zen-coffee/",
-  "https://m-colen.github.io/number-guessor/",
-];
+const projectSites = ['https://m-colen.github.io/zen-coffee/','https://m-colen.github.io/number-guessor/'];
+const projectDescriptions = ['This project is the landing page for a fictional coffee shop called Zen Coffee.','This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.'];
+const githubPageLinks = ['https://github.com/m-Colen/zen-coffee','https://github.com/m-Colen/number-guessor'];
+const liveProjectLinks = ['https://m-colen.github.io/zen-coffee/','https://m-colen.github.io/number-guessor/'];
 
 // To increment/decrement project count on each interaction
 let projectNumber = 0;
@@ -136,5 +124,5 @@ const moveLeft = () => {
   liveButton.setAttribute("href", liveProjectLinks[projectNumber]);
 };
 
-rightArrow.addEventListener("click", moveRight);
-leftArrow.addEventListener("click", moveLeft);
+rightArrow.addEventListener('click', moveRight);
+leftArrow.addEventListener('click', moveLeft);

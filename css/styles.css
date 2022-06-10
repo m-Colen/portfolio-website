@@ -469,7 +469,7 @@ nav a:hover {
   width: 1px;
   background-color: var(--hero-color);
   position: absolute;
-  animation: fallingStars 5s infinite linear;
+  animation: fallingStars 9s infinite linear;
 }
 
 #line-1 {
@@ -724,6 +724,8 @@ nav a:hover {
   border-radius: 5px;
   border-top: 10px solid #999;
   border-bottom: 10px solid #999;
+  border-left: 2px solid #999;
+  border-right: 2px solid #999;
 }
 
 #project-summary {
