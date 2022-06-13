@@ -10,15 +10,16 @@
 
 html {
   font-size: 100%;
+  /* Fonts */
   --header-font: "Roboto Condensed", Sans-Serif;
   --body-font: "Cabin", Sans-Serif;
   /* Dark Colors */
-  --primary-color: #082032;
+  --primary-color: linear-gradient(45deg, #1b1a19, #201f1d);
   --hero-color: #0f0e0e;
   /* Light Colors */
-  --sub-section-color: #eeeeee;
   --sub-section-header-color: #faf3e0;
-  --highlight-color: #d6a02b;
+  --highlight-color: #e76f51;
+  --secondary-highlight-color: #eeeeee;
 }
 
 body {
@@ -45,7 +46,9 @@ h3 {
 }
 
 .active {
-  display: block !important;
+  display: flex !important;
+  flex-flow: column;
+  justify-content: center;
 }
 
 .inactive {
@@ -112,7 +115,7 @@ nav {
   left: 0;
   width: 100%;
   z-index: 99;
-  opacity: 0.95;
+  opacity: 0.97;
 }
 
 #desktop-nav {
@@ -137,7 +140,7 @@ nav a {
 
 nav a:hover {
   color: var(--highlight-color);
-  border-bottom: 3px solid dodgerblue;
+  border-bottom: 3px solid var(--secondary-highlight-color);
 }
 
 .nav-logo {
@@ -173,25 +176,61 @@ nav a:hover {
 .hamburger-menu {
   display: none;
   background-color: transparent;
+  position: relative;
+  z-index: 99;
 }
 
 .hamburger-menu > div {
-  width: 30px;
-  height: 3px;
+  width: 33px;
+  height: 2.5px;
   background-color: var(--highlight-color);
   margin: 0.3rem 0;
+  position: relative;
+  z-index: 99;
 }
 
 /* Hamburger menu animation */
 
-.ham-top-inactive {
+.ham-top-expanded {
   transition: all 1s;
-  transform: translatey(0.40625rem);
+  transform: translatey(0.5rem) rotate(45deg);
 }
 
-.ham-bottom-inactive {
+.slide-left {
+  -webkit-animation: slide-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+}
+
+.ham-bottom-expanded {
   transition: all 1s;
-  transform: translatey(-0.40625rem);
+  transform: translatey(-0.40625rem) rotate(-45deg);
 }
 
 /* Shows ham menu on screens 825px or smaller & hides desktop nav */
@@ -213,7 +252,11 @@ nav a:hover {
   top: 0;
   right: 0;
   padding: 0.5rem 1rem;
-  background-color: salmon;
+  background-color: rgba(44, 44, 44, 0.98);
+}
+
+#nav-links-mobile a {
+  color: #fff;
 }
 
 #nav-links-mobile a:hover {
@@ -222,7 +265,7 @@ nav a:hover {
 
 #nav-links-mobile li {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 1rem 0;
 }
 
@@ -281,7 +324,7 @@ nav a:hover {
 
 #about h1 {
   font-size: 4rem;
-  color: #f0a500;
+  color: var(--secondary-highlight-color);
 }
 
 #about-links {
@@ -400,7 +443,7 @@ nav a:hover {
 
 @media only screen and (max-width: 520px) {
   html {
-    font-size: 0.93rem;
+    font-size: 0.95rem;
   }
   #about-text-contact {
     display: none;
@@ -665,7 +708,9 @@ nav a:hover {
   }
 }
 
-/* Projects section */
+/*
+* Projects section 
+*/
 
 #projects {
   padding-top: 3rem;
@@ -696,7 +741,7 @@ nav a:hover {
   gap: 5%;
 }
 
-#arrows > i {
+#arrows i {
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: all 0.5s;
@@ -705,7 +750,7 @@ nav a:hover {
   border-radius: 4px;
 }
 
-#arrows > i:hover {
+#arrows i:hover {
   color: var(--highlight-color);
   transform: scale(1.05);
   background-color: #222;
@@ -742,7 +787,9 @@ nav a:hover {
   font-size: 0.8rem;
 }
 
-/* Tech stack section */
+/* 
+* Tech stack section 
+*/
 
 #tech-stack {
   padding-top: 3rem;
@@ -817,7 +864,9 @@ nav a:hover {
   }
 }
 
-/* Contact form section */
+/*
+* Contact form section 
+*/
 
 #contact {
   padding-top: 3.75rem;
@@ -868,7 +917,9 @@ nav a:hover {
   }
 }
 
-/* Footer section */
+/*
+* Footer section 
+*/
 
 footer {
   background: #000;

@@ -15,7 +15,7 @@
       src="https://kit.fontawesome.com/972df6eb1d.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js" async></script>
+    <script src="js/script.js" defer></script>
   </head>
 
   <body>
@@ -70,25 +70,27 @@
         </ul>
 
         <!--Hamburger menu-->
-        <button class="hamburger-menu" aria-expanded="false" aria-label="Menu">
+        <button
+          class="hamburger-menu"
+          role="button"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
           <div class="ham-top-bun"></div>
-          <div></div>
+          <div class="ham-middle"></div>
           <div class="ham-bottom-bun"></div>
         </button>
 
         <!--Mobile nav menu-->
         <ul id="nav-links-mobile">
           <li>
-            <a href="index.html" title="Home Page">Home</a>
+            <a id="about-m" href="#about">About</a>
           </li>
-          <li id="about-m">
-            <a href="#about">About</a>
+          <li>
+            <a id="projects-m" href="#projects">Projects</a>
           </li>
-          <li id="projects-m">
-            <a href="#projects">Projects</a>
-          </li>
-          <li id="contact-m">
-            <a href="#contact">Contact</a>
+          <li>
+            <a id="contact-m" href="#contact">Contact</a>
           </li>
         </ul>
       </nav>
@@ -101,10 +103,7 @@
         <div id="about-container">
           <div id="about-card">
             <div id="about-img">
-              <img
-                src="https://github.com/m-Colen/portfolio-website/blob/main/images/banner-img.jpg?raw=true"
-                alt="Matt Colen"
-              />
+              <img src="images/banner-img.jpg" alt="Matt Colen" />
             </div>
             <div id="about-banner">
               <h1>Matt Colen</h1>
@@ -120,13 +119,14 @@
                 <a
                   class="button reverse-button right"
                   href="#projects"
-                  title="Check out my projects"
+                  title="Learn more about my projects"
                   >Projects</a
                 >
               </div>
             </div>
           </div>
 
+          <!-- About card -->
           <div id="about-text" class="inactive">
             <p>
               Hi, my name's Matt. I'm a developer who loves trying to push the
@@ -136,16 +136,16 @@
               <div id="about-text-passions">
                 <p>I'm passionate about:</p>
                 <ul>
-                  <li>Solving problems</li>
-                  <li>Improving processes</li>
-                  <li>Learning new things</li>
-                  <li>Providing high quality work</li>
+                  <li>Creating responsive designs</li>
+                  <li>Creating designs that are accessible to everyone</li>
+                  <li>Solving complex problems</li>
+                  <li>Always learning new things!</li>
                 </ul>
               </div>
               <div id="about-text-contact">
                 <p>
-                  If you are looking for someone like me for your team feel free
-                  to reach out below!
+                  Please reach out to me if you are looking for a passionate
+                  lifelong learner to add to your team!
                 </p>
                 <a
                   href="https://www.linkedin.com/in/matthew-colen-061650209/"
@@ -170,7 +170,8 @@
           </div>
         </div>
 
-        <div id="falling-stars">
+        <!-- Stars animation -->
+        <div role="presentation" aria-hidden="true" id="falling-stars">
           <div class="star" id="line-1"></div>
           <div class="star" id="line-2"></div>
           <div class="star" id="line-3"></div>
@@ -209,11 +210,16 @@
         <h2>Projects</h2>
         <div id="projects-container">
           <div id="arrows">
-            <i id="left-arrow" class="fa-solid fa-angle-left"></i>
-            <i id="right-arrow" class="fa-solid fa-angle-right"></i>
+            <button>
+              <i id="left-arrow" class="fa-solid fa-angle-left"></i>
+            </button>
+            <button>
+              <i id="right-arrow" class="fa-solid fa-angle-right"></i>
+            </button>
           </div>
           <div id="project-carousel">
             <iframe
+              aria-hidden="true"
               id="project-display"
               src="https://m-colen.github.io/zen-coffee/"
               frameborder="0"
@@ -226,9 +232,10 @@
               </p>
             </iframe>
             <div id="project-summary">
-=======
-              <p id="project-summary-text">This project is the landing page for a fictional coffee shop called Zen Coffee.</p>
->>>>>>> 157efd0e077299388e6ffa84672a19bd0012cdec
+              <p id="project-summary-text">
+                This project is the landing page for a fictional coffee shop
+                called Zen Coffee.
+              </p>
               <div id="project-buttons">
                 <a
                   id="project-github-button"
@@ -252,7 +259,7 @@
 
       <!-- Tech stack section -->
       <section id="tech-stack">
-        <h3>Tech stack</h3>
+        <h2>Tech stack</h2>
         <div id="skills-container">
           <div id="html-container" class="tech-card">
             <i title="HTML5" class="fab fa-html5 fa-2x"></i>
@@ -283,15 +290,16 @@
 
       <!-- Contact section -->
       <section id="contact">
+        <h2>Contact</h2>
         <form action="https://submit-form.com/DrgOInqq" target="_blank">
           <fieldset>
-            <legend>Contact me</legend>
+            <legend>Please enter your information below to contact me</legend>
             <input type="hidden" name="_feedback.dark" value="true" />
-            <label for="name">Your name</label>
+            <label for="name">Name</label>
             <input type="text" id="name" name="name" required />
-            <label for="email">Your email address</label>
+            <label for="email">Email address</label>
             <input type="email" id="email" name="email" required />
-            <label for="message">Your message</label>
+            <label for="message">Message</label>
             <textarea
               id="message"
               name="message"

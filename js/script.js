@@ -1,5 +1,5 @@
-/* 
- * Nav Section 
+/*
+ * Nav Section
  */
 
 // Toggles ham menu
@@ -8,23 +8,31 @@ const hamMenu = document.querySelector(".hamburger-menu"); // Target
 
 const toggleHamburgerMenu = () => {
   const hamTopBun = document.querySelector(".ham-top-bun");
+  const hamMiddle = document.querySelector(".ham-middle");
   const hamBottomBun = document.querySelector(".ham-bottom-bun");
   const mobileNav = document.querySelector("#nav-links-mobile");
+  const hamButton = document.querySelector(".hamburger-menu");
 
   // Toggles css class to apply transition effect
-  hamTopBun.classList.toggle("ham-top-inactive");
-  hamBottomBun.classList.toggle("ham-bottom-inactive");
+  hamTopBun.classList.toggle("ham-top-expanded");
+  hamMiddle.classList.toggle("slide-left");
+  hamBottomBun.classList.toggle("ham-bottom-expanded");
 
   // Toggles mobile nav on click
   mobileNav.classList.toggle("active");
+
+  // Toggles aria attribute on button
+  hamButton.getAttribute("aria-expanded") === "true"
+    ? hamButton.setAttribute("aria-expanded", "false")
+    : hamButton.setAttribute("aria-expanded", "true");
 };
 
 hamMenu.addEventListener("click", toggleHamburgerMenu);
 
 // To hide mobile nav menu on selection
-const mobileAbout = document.getElementById("about-m");
-const mobileProjects = document.getElementById("projects-m");
-const mobileContact = document.getElementById("contact-m");
+const mobileAbout = document.querySelector("#about-m");
+const mobileProjects = document.querySelector("#projects-m");
+const mobileContact = document.querySelector("#contact-m");
 
 mobileAbout.addEventListener("click", toggleHamburgerMenu);
 mobileProjects.addEventListener("click", toggleHamburgerMenu);
@@ -34,18 +42,20 @@ mobileContact.addEventListener("click", toggleHamburgerMenu);
 const resetNav = () => {
   const mobileNav = document.querySelector("#nav-links-mobile");
   const hamTopBun = document.querySelector(".ham-top-bun");
+  const hamMiddle = document.querySelector(".ham-middle");
   const hamBottomBun = document.querySelector(".ham-bottom-bun");
   if (window.innerWidth >= 825) {
     mobileNav.classList.remove("active");
-    hamTopBun.classList.toggle('ham-top-inactive');
-    hamBottomBun.classList.toggle('ham-bottom-inactive');
+    hamTopBun.classList.remove("ham-top-expanded");
+    hamMiddle.classList.remove("slide-left");
+    hamBottomBun.classList.remove("ham-bottom-expanded");
   }
 };
 
 window.addEventListener("resize", resetNav);
 
-/* 
- * About me section 
+/*
+ * About me section
  */
 
 // Adds functionality to the "about" button to show/hide text
@@ -81,7 +91,9 @@ mainNavAbout.addEventListener("click", aboutButtonToggle);
 mobileNavAbout.addEventListener("click", aboutButtonToggle);
 aboutMeClosed.addEventListener("click", aboutButtonToggle);
 
-/* Project carousel */
+/* 
+* Project carousel 
+*/
 
 // Targets
 const leftArrow = document.getElementById("left-arrow");
@@ -94,10 +106,22 @@ const githubButton = document.getElementById("project-github-button");
 const liveButton = document.getElementById("project-live-button");
 
 // Arrays for project data
-const projectSites = ['https://m-colen.github.io/zen-coffee/','https://m-colen.github.io/number-guessor/'];
-const projectDescriptions = ['This project is the landing page for a fictional coffee shop called Zen Coffee.','This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.'];
-const githubPageLinks = ['https://github.com/m-Colen/zen-coffee','https://github.com/m-Colen/number-guessor'];
-const liveProjectLinks = ['https://m-colen.github.io/zen-coffee/','https://m-colen.github.io/number-guessor/'];
+const projectSites = [
+  "https://m-colen.github.io/zen-coffee/",
+  "https://m-colen.github.io/number-guessor/",
+];
+const projectDescriptions = [
+  "This project is the landing page for a fictional coffee shop called Zen Coffee.",
+  "This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.",
+];
+const githubPageLinks = [
+  "https://github.com/m-Colen/zen-coffee",
+  "https://github.com/m-Colen/number-guessor",
+];
+const liveProjectLinks = [
+  "https://m-colen.github.io/zen-coffee/",
+  "https://m-colen.github.io/number-guessor/",
+];
 
 // To increment/decrement project count on each interaction
 let projectNumber = 0;
@@ -124,5 +148,5 @@ const moveLeft = () => {
   liveButton.setAttribute("href", liveProjectLinks[projectNumber]);
 };
 
-rightArrow.addEventListener('click', moveRight);
-leftArrow.addEventListener('click', moveLeft);
+rightArrow.addEventListener("click", moveRight);
+leftArrow.addEventListener("click", moveLeft);
