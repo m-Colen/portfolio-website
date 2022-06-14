@@ -100,24 +100,24 @@
     <main>
       <!--About section-->
       <section id="about">
-        <div id="about-container">
-          <div id="about-card">
-            <div id="about-img">
+        <div class="about-container">
+          <div class="about-top-card">
+            <div class="about-img">
               <img src="images/banner-img.jpg" alt="Matt Colen" />
             </div>
-            <div id="about-banner">
+            <div>
               <h1>Matt Colen</h1>
               <p>Front End Web Developer</p>
-              <div id="about-links">
+              <div class="about-links">
                 <button
                   id="about-me-button"
-                  class="button left"
+                  class="button"
                   title="Learn more about me"
                 >
                   About
                 </button>
                 <a
-                  class="button reverse-button right"
+                  class="button"
                   href="#projects"
                   title="Learn more about my projects"
                   >Projects</a
@@ -126,14 +126,14 @@
             </div>
           </div>
 
-          <!-- About card -->
-          <div id="about-text" class="inactive">
+          <!-- About card lower -->
+          <div class="about-text" class="inactive">
             <p>
               Hi, my name's Matt. I'm a developer who loves trying to push the
               boundaries of what's possible.
             </p>
-            <div id="about-lower-card">
-              <div id="about-text-passions">
+            <div class="about-lower-card">
+              <div>
                 <p>I'm passionate about:</p>
                 <ul>
                   <li>Creating responsive designs</li>
@@ -142,11 +142,8 @@
                   <li>Always learning new things!</li>
                 </ul>
               </div>
-              <div id="about-text-contact">
-                <p>
-                  Please reach out to me if you are looking for a passionate
-                  lifelong learner to add to your team!
-                </p>
+              <div class="about-card-contact">
+                <p>Reach out to me to learn more!</p>
                 <a
                   href="https://www.linkedin.com/in/matthew-colen-061650209/"
                   target="_blank"
@@ -162,6 +159,16 @@
                 <a href="#contact" title="Email"
                   ><i id="email-nav" class="fa-solid fa-at"></i
                 ></a>
+                <ul class="about-links projects-link-card">
+                  <li>
+                    <a
+                      class="button"
+                      href="#projects"
+                      title="Learn more about my projects"
+                      >Projects</a
+                    >
+                  </li>
+                </ul>
               </div>
             </div>
             <button id="about-me-button-close" class="inactive">
@@ -208,8 +215,8 @@
       <!--Projects section-->
       <section id="projects">
         <h2>Projects</h2>
-        <div id="projects-container">
-          <div id="arrows">
+        <div class="projects-container">
+          <div class="arrows">
             <button>
               <i id="left-arrow" class="fa-solid fa-angle-left"></i>
             </button>
@@ -217,7 +224,7 @@
               <i id="right-arrow" class="fa-solid fa-angle-right"></i>
             </button>
           </div>
-          <div id="project-carousel">
+          <div class="project-carousel">
             <iframe
               aria-hidden="true"
               id="project-display"
@@ -231,12 +238,12 @@
                 </a>
               </p>
             </iframe>
-            <div id="project-summary">
-              <p id="project-summary-text">
+            <div class="project-summary">
+              <p class="project-summary-text">
                 This project is the landing page for a fictional coffee shop
                 called Zen Coffee.
               </p>
-              <div id="project-buttons">
+              <div class="project-buttons">
                 <a
                   id="project-github-button"
                   class="button project-button"
@@ -260,28 +267,28 @@
       <!-- Tech stack section -->
       <section id="tech-stack">
         <h2>Tech stack</h2>
-        <div id="skills-container">
-          <div id="html-container" class="tech-card">
+        <div class="skills-container">
+          <div class="html-container" class="tech-card">
             <i title="HTML5" class="fab fa-html5 fa-2x"></i>
             <p>HTML</p>
           </div>
-          <div id="css-container" class="tech-card">
+          <div class="css-container" class="tech-card">
             <i title="CSS3" class="fab fa-css3-alt fa-2x"></i>
             <p>CSS</p>
           </div>
-          <div id="js-container" class="tech-card">
+          <div class="js-container" class="tech-card">
             <i title="JavaScript" class="fab fa-js fa-2x"></i>
             <p>JS</p>
           </div>
-          <div id="git-container" class="tech-card">
+          <div class="git-container" class="tech-card">
             <i title="Git" class="fab fa-git fa-2x"></i>
             <p>Git</p>
           </div>
-          <div id="gitHub-container" class="tech-card">
+          <div class="gitHub-container" class="tech-card">
             <i title="GitHub" class="fab fa-github fa-2x github-animation"></i>
             <div>GitHub</div>
           </div>
-          <div id="figma-container" class="tech-card">
+          <div class="figma-container" class="tech-card">
             <i title="Figma" class="fab fa-figma fa-2x"></i>
             <p>Figma</p>
           </div>
