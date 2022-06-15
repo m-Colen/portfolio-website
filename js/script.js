@@ -58,52 +58,40 @@ window.addEventListener("resize", resetNav);
  * About me section
  */
 
-// Adds functionality to the "about" button to show/hide text
-const aboutMeSection = document.getElementById("about-text");
-const aboutButton = document.getElementById("about-me-button");
-const aboutMeClosed = document.getElementById("about-me-button-close");
-const mainNavAbout = document.querySelector(".nav-about-link");
-const mobileNavAbout = document.getElementById("about-m");
-const aboutCard = document.getElementById("about-card");
+// Adds functionality to the "about" button(s) to show/hide text
 
-const aboutButtonToggle = () => {
-  // To toggle "about me" text
-  if (aboutMeSection.className === "inactive" && window.innerWidth > 1175) {
-    aboutMeSection.className = "active unhidden-large";
-  } else if (
-    aboutMeSection.className === "inactive" &&
-    window.innerWidth <= 1175
-  ) {
-    aboutMeSection.className = "active unhidden-small";
-  } else {
-    aboutMeSection.className = "inactive";
-  }
-  aboutMeClosed.className === "inactive"
-    ? (aboutMeClosed.className = "")
-    : (aboutMeClosed.className = "inactive");
-  aboutCard.className === ""
-    ? (aboutCard.className = "about-card-minimal")
-    : (aboutCard.className = "");
+const aboutButton = document.querySelectorAll(".about-button");
+const closeButton = document.querySelector("#about-me-button-close");
+const banner = document.querySelector(".about-top-card");
+
+const toggleAboutCard = () => {
+  const aboutCard = document.querySelector(".about-text");
+  const aboutLinks = document.querySelector(".about-links");
+  aboutCard.classList.toggle("unhidden");
+  aboutCard.classList.toggle("active");
+  aboutLinks.classList.toggle("inactive");
+  closeButton.classList.toggle("inactive");
+
+  // Decreases the size of the banner section on about me activation
+  banner.classList.toggle("minimal");
 };
 
-aboutButton.addEventListener("click", aboutButtonToggle);
-mainNavAbout.addEventListener("click", aboutButtonToggle);
-mobileNavAbout.addEventListener("click", aboutButtonToggle);
-aboutMeClosed.addEventListener("click", aboutButtonToggle);
+aboutButton.forEach((item) => item.addEventListener("click", toggleAboutCard));
+closeButton.addEventListener("click", toggleAboutCard);
 
-/* 
-* Project carousel 
-*/
+/*
+ * Project carousel
+ */
 
 // Targets
-const leftArrow = document.getElementById("left-arrow");
-const rightArrow = document.getElementById("right-arrow");
+const leftArrow = document.querySelector("#left-arrow");
+const rightArrow = document.querySelector("#right-arrow");
 
 // Variables needing updated on each project change
-const projectDisplay = document.getElementById("project-display");
-const projectSummaryText = document.getElementById("project-summary-text");
-const githubButton = document.getElementById("project-github-button");
-const liveButton = document.getElementById("project-live-button");
+const projectDisplay = document.querySelector("#project-display");
+const projectSummaryText = document.querySelector(".project-summary-text");
+const githubButton = document.querySelector("#project-github-button");
+const liveButton = document.querySelector("#project-live-button");
 
 // Arrays for project data
 const projectSites = [
@@ -111,7 +99,7 @@ const projectSites = [
   "https://m-colen.github.io/number-guessor/",
 ];
 const projectDescriptions = [
-  "This project is the landing page for a fictional coffee shop called Zen Coffee.",
+  "This project is the home page for a fictional coffee shop called Zen Coffee.",
   "This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.",
 ];
 const githubPageLinks = [

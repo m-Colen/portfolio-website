@@ -26,18 +26,23 @@
         <!--Desktop nav menu-->
         <ul id="desktop-nav">
           <li class="nav-logo">
-            <a href="index.html" title="Home Page"><code>&lt_mC&gt</code></a>
+            <a href="index.html" title="Home Page" aria-label="Home Page"
+              ><code>&lt_mC&gt</code></a
+            >
           </li>
           <li>
             <!-- Nav internal links -->
             <ul class="nav-internal-links">
               <li>
-                <a class="nav-about-link" href="#about" title="About Me"
+                <a
+                  class="nav-about-link about-button"
+                  href="#about"
+                  aria-label="About me"
                   >About</a
                 >
               </li>
               <li>
-                <a href="#projects" title="My projects">Projects</a>
+                <a href="#projects" aria-label="My projects">Projects</a>
               </li>
             </ul>
           </li>
@@ -48,7 +53,7 @@
                 <a
                   href="https://www.linkedin.com/in/matthew-colen-061650209/"
                   target="_blank"
-                  title="LinkedIn"
+                  aria-label="LinkedIn"
                   ><i id="li-nav" class="fa-brands fa-linkedin"></i
                 ></a>
               </li>
@@ -56,12 +61,12 @@
                 <a
                   href="https://github.com/m-Colen"
                   target="_blank"
-                  title="GitHub"
+                  aria-label="GitHub"
                   ><i id="gh-nav" class="fa-brands fa-github"></i
                 ></a>
               </li>
               <li>
-                <a href="#contact" title="Email"
+                <a href="#contact" aria-label="Contact me"
                   ><i id="email-nav" class="fa-solid fa-at"></i
                 ></a>
               </li>
@@ -84,7 +89,7 @@
         <!--Mobile nav menu-->
         <ul id="nav-links-mobile">
           <li>
-            <a id="about-m" href="#about">About</a>
+            <a id="about-m" class="about-button" href="#about">About</a>
           </li>
           <li>
             <a id="projects-m" href="#projects">Projects</a>
@@ -109,11 +114,7 @@
               <h1>Matt Colen</h1>
               <p>Front End Web Developer</p>
               <div class="about-links">
-                <button
-                  id="about-me-button"
-                  class="button"
-                  title="Learn more about me"
-                >
+                <button class="button about-button" title="Learn more about me">
                   About
                 </button>
                 <a
@@ -134,8 +135,8 @@
             </p>
             <div class="about-lower-card">
               <div>
-                <p>I'm passionate about:</p>
-                <ul>
+                <h3 class="about-main-header">My mission:</h3>
+                <ul class="about-main-text">
                   <li>Creating responsive designs</li>
                   <li>Creating designs that are accessible to everyone</li>
                   <li>Solving complex problems</li>
@@ -147,16 +148,16 @@
                 <a
                   href="https://www.linkedin.com/in/matthew-colen-061650209/"
                   target="_blank"
-                  title="LinkedIn"
+                  aria-label="LinkedIn"
                   ><i id="li-nav" class="fa-brands fa-linkedin"></i
                 ></a>
                 <a
                   href="https://github.com/m-Colen"
                   target="_blank"
-                  title="GitHub"
+                  aria-label="GitHub"
                   ><i id="gh-nav" class="fa-brands fa-github"></i
                 ></a>
-                <a href="#contact" title="Email"
+                <a href="#contact" aria-label="Contact me"
                   ><i id="email-nav" class="fa-solid fa-at"></i
                 ></a>
                 <ul class="about-links projects-link-card">
@@ -171,8 +172,12 @@
                 </ul>
               </div>
             </div>
-            <button id="about-me-button-close" class="inactive">
-              <i class="fa-solid fa-xmark"></i>
+            <button
+              id="about-me-button-close"
+              class="inactive"
+              aria-label="Close about section"
+            >
+              <i class="fa-solid fa-xmark fa-2x"></i>
             </button>
           </div>
         </div>
@@ -218,10 +223,18 @@
         <div class="projects-container">
           <div class="arrows">
             <button>
-              <i id="left-arrow" class="fa-solid fa-angle-left"></i>
+              <i
+                id="left-arrow"
+                class="fa-solid fa-angle-left"
+                aria-label="previous-project"
+              ></i>
             </button>
             <button>
-              <i id="right-arrow" class="fa-solid fa-angle-right"></i>
+              <i
+                id="right-arrow"
+                class="fa-solid fa-angle-right"
+                aria-label="next-project"
+              ></i>
             </button>
           </div>
           <div class="project-carousel">
@@ -240,8 +253,8 @@
             </iframe>
             <div class="project-summary">
               <p class="project-summary-text">
-                This project is the landing page for a fictional coffee shop
-                called Zen Coffee.
+                This project is the home page for a fictional coffee shop called
+                Zen Coffee.
               </p>
               <div class="project-buttons">
                 <a
@@ -269,27 +282,27 @@
         <h2>Tech stack</h2>
         <div class="skills-container">
           <div class="html-container" class="tech-card">
-            <i title="HTML5" class="fab fa-html5 fa-2x"></i>
+            <i class="fab fa-html5 fa-2x"></i>
             <p>HTML</p>
           </div>
           <div class="css-container" class="tech-card">
-            <i title="CSS3" class="fab fa-css3-alt fa-2x"></i>
+            <i class="fab fa-css3-alt fa-2x"></i>
             <p>CSS</p>
           </div>
           <div class="js-container" class="tech-card">
-            <i title="JavaScript" class="fab fa-js fa-2x"></i>
+            <i class="fab fa-js fa-2x"></i>
             <p>JS</p>
           </div>
           <div class="git-container" class="tech-card">
-            <i title="Git" class="fab fa-git fa-2x"></i>
+            <i class="fab fa-git fa-2x"></i>
             <p>Git</p>
           </div>
           <div class="gitHub-container" class="tech-card">
-            <i title="GitHub" class="fab fa-github fa-2x github-animation"></i>
+            <i class="fab fa-github fa-2x github-animation"></i>
             <div>GitHub</div>
           </div>
           <div class="figma-container" class="tech-card">
-            <i title="Figma" class="fab fa-figma fa-2x"></i>
+            <i class="fab fa-figma fa-2x"></i>
             <p>Figma</p>
           </div>
         </div>
@@ -303,15 +316,28 @@
             <legend>Please enter your information below to contact me</legend>
             <input type="hidden" name="_feedback.dark" value="true" />
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              aria-label="Enter your name"
+              required
+            />
             <label for="email">Email address</label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              aria-label="Enter your email address"
+              required
+            />
             <label for="message">Message</label>
             <textarea
               id="message"
               name="message"
-              rows="6"
+              rows="4"
               maxlength="3000"
+              aria-label="Enter your message"
               required
             ></textarea>
             <button type="submit" class="button contact-button">Send</button>
@@ -327,12 +353,15 @@
           <a
             href="https://www.linkedin.com/in/matthew-colen-061650209/"
             target="_blank"
-            title="LinkedIn"
+            aria-label="LinkedIn"
             ><i class="fa-brands fa-linkedin"></i
           ></a>
         </li>
         <li class="contact-link">
-          <a href="https://github.com/m-Colen" target="_blank" title="GitHub"
+          <a
+            href="https://github.com/m-Colen"
+            target="_blank"
+            aria-label="GitHub"
             ><i class="fa-brands fa-github"></i
           ></a>
         </li>
