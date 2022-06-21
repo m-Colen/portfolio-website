@@ -95,8 +95,8 @@ const liveButton = document.querySelector("#project-live-button");
 
 // Arrays for project data
 const projectImages = [
-  "../images/zen-coffee-thumbnail.PNG",
-  "../images/number-guessor-thumbnail.PNG",
+  "https://github.com/m-Colen/portfolio-website/blob/main/images/zen-coffee-thumbnail.PNG?raw=true",
+  "https://github.com/m-Colen/portfolio-website/blob/main/images/number-guessor-thumbnail.PNG?raw=true",
 ];
 const projectDescriptions = [
   "This project involved building the home page for a fictional coffee shop called Zen Coffee.",
