@@ -24,7 +24,8 @@ html {
 }
 
 body {
-  font-family: var(--body-font);
+  font: 15px var(--body-font);
+  line-height: 1.25;
   background-color: var(--hero-color);
   color: var(--sub-section-header-color);
 }
@@ -37,6 +38,14 @@ h5,
 h6 {
   font-family: var(--header-font);
   color: var(--highlight-color);
+}
+
+h2 {
+  border-bottom: 2px dashed #aaa;
+  padding: 1% 0;
+  margin: 2% 0;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
 h3 {
@@ -70,7 +79,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 section {
-  padding: 0 12%;
+  padding: 10% 12%;
 }
 
 li {
@@ -106,7 +115,7 @@ button:active {
 nav {
   align-items: center;
   background: var(--primary-color);
-  padding: 2vh 12%;
+  padding: 2.5vh 12%;
   position: fixed;
   top: 0;
   left: 0;
@@ -125,7 +134,11 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  opacity: 0.95;
+  opacity: 0.97;
+}
+
+#desktop-nav > li {
+  width: calc(100% / 3);
 }
 
 nav a {
@@ -134,6 +147,7 @@ nav a {
   transition: color 1s;
   position: relative;
   z-index: 99;
+  display: inline-block;
 }
 
 nav a:hover {
@@ -157,12 +171,13 @@ nav a:hover {
 }
 
 .nav-internal-links {
+  display: flex;
   justify-content: center;
 }
 
 .nav-external-links {
+  display: flex;
   justify-content: flex-end;
-  width: calc(100% / 3);
 }
 
 /*
@@ -204,6 +219,7 @@ nav a:hover {
  * animation slide-left
  * ----------------------------------------
  */
+
 @-webkit-keyframes slide-left {
   0% {
     -webkit-transform: translateX(0);
@@ -273,18 +289,16 @@ nav a:hover {
 
 #about {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
+  align-items: center;
 }
 
 .about-container {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
   position: relative;
   z-index: 99;
 }
@@ -408,19 +422,16 @@ nav a:hover {
   gap: 2%;
   background-color: var(--primary-color);
   opacity: 0.975;
-  padding: 1rem;
+  padding: 1rem 2rem;
   position: relative;
 }
 
 .about-text > p {
   color: var(--highlight-color);
-  font-size: 1rem;
   font-weight: bold;
-  margin: 3% 0;
   border-bottom: 5px solid #333;
   padding: 0.5rem 0;
-  padding-right: 2rem;
-  text-transform: uppercase;
+  text-align: center;
 }
 
 .about-lower-card {
@@ -448,6 +459,10 @@ nav a:hover {
   margin: 0;
 }
 
+.about-lower-card li {
+  list-style-type: circle;
+}
+
 .about-main-header,
 .about-card-contact {
   padding-top: 0.5rem;
@@ -457,7 +472,10 @@ nav a:hover {
   border-top: 5px solid #eee;
   border-bottom: 0;
   text-align: left;
-  font-size: 1.2rem;
+}
+
+.about-main-text {
+  padding-left: 1.2rem;
 }
 
 .about-card-contact {
@@ -496,6 +514,7 @@ nav a:hover {
   html {
     font-size: 0.85rem;
   }
+  /* Hides right side of card */
   .about-card-contact {
     display: none;
   }
@@ -541,9 +560,10 @@ nav a:hover {
   #about {
     flex-direction: column;
     margin: 0;
+    padding: 0 12%;
   }
   section {
-    padding: 0 12%;
+    padding: 10vh 12%;
   }
 }
 
@@ -762,31 +782,19 @@ nav a:hover {
 */
 
 #projects {
-  padding-top: 4.5rem;
-  padding-bottom: 1.5rem;
-  background: var(--hero-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  margin: 0;
   text-align: center;
   z-index: 2;
-  border-radius: 5px 5px 0 0;
-}
-
-#projects h2 {
-  border-bottom: 5px solid #333;
-  padding: 1% 0;
-  margin: 0;
-  font-size: 1.8rem;
 }
 
 .arrows {
   padding: 0.75rem;
   display: flex;
   justify-content: center;
-  gap: 3%;
+  gap: 5%;
 }
 
 .arrows > button {
@@ -795,6 +803,7 @@ nav a:hover {
 
 .arrows i {
   padding: 0.5rem 1rem;
+  margin-bottom: 10%;
   cursor: pointer;
   transition: all 0.5s;
   background-color: var(--highlight-color);
@@ -809,26 +818,23 @@ nav a:hover {
 }
 
 /* Project carousel */
+
 .project-carousel {
-  height: 80vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.project-carousel > iframe {
-  height: 100%;
+.project-carousel img {
+  display: block;
+  height: 60vh;
   width: 100%;
-  border-radius: 5px;
-  border-top: 10px solid #333;
-  border-bottom: 10px solid #333;
-  border-left: 5px solid #333;
-  border-right: 5px solid #333;
+  object-fit: cover;
+  border: 3px solid #999;
 }
 
 .project-summary {
   text-align: left;
-  padding: 0.75rem;
+  padding: 0.75rem 0;
   margin-top: 2%;
 }
 
@@ -840,7 +846,7 @@ nav a:hover {
 }
 
 .project-button {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 0.5rem 0;
 }
 
@@ -849,9 +855,7 @@ nav a:hover {
 */
 
 #tech-stack {
-  padding-top: 5%;
   text-align: center;
-  margin-bottom: 20vh;
 }
 
 .skills-container {
@@ -862,6 +866,7 @@ nav a:hover {
   gap: 5vw;
   padding-top: 2.5vh;
   padding-bottom: 2.5vh;
+  border: 5px solid #333;
 }
 
 .skills-container i {
@@ -877,10 +882,13 @@ nav a:hover {
 
 @media only screen and (max-width: 825px) {
   .button {
-    font-size: 1rem;
+    font-size: .9rem;
+  }
+  #about {
+    padding: 0 4%;
   }
   section {
-    padding: 0 4%;
+    padding: 10vh 4%;
   }
   nav {
     padding: 0.4rem 4%;
@@ -927,17 +935,7 @@ nav a:hover {
 */
 
 #contact {
-  padding-top: 2.5rem;
-  padding-bottom: 2rem;
   max-width: 100%;
-}
-
-#contact h2,
-#tech-stack h2 {
-  border-bottom: 5px solid #333;
-  padding: 2% 0;
-  margin: 0.5% 0;
-  text-align: center;
 }
 
 #contact form {

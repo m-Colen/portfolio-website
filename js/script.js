@@ -66,10 +66,10 @@ const banner = document.querySelector(".about-top-card");
 
 const toggleAboutCard = () => {
   const aboutCard = document.querySelector(".about-text");
-  const aboutLinks = document.querySelector(".about-links");
+  const aboutMinimal = document.querySelector(".about-minimal");
   aboutCard.classList.toggle("unhidden");
   aboutCard.classList.toggle("active");
-  aboutLinks.classList.toggle("inactive");
+  aboutMinimal.classList.toggle("inactive");
   closeButton.classList.toggle("inactive");
 
   // Decreases the size of the banner section on about me activation
@@ -88,19 +88,19 @@ const leftArrow = document.querySelector("#left-arrow");
 const rightArrow = document.querySelector("#right-arrow");
 
 // Variables needing updated on each project change
-const projectDisplay = document.querySelector("#project-display");
+const projectDisplay = document.querySelector(".carousel-img");
 const projectSummaryText = document.querySelector(".project-summary-text");
 const githubButton = document.querySelector("#project-github-button");
 const liveButton = document.querySelector("#project-live-button");
 
 // Arrays for project data
-const projectSites = [
-  "https://m-colen.github.io/zen-coffee/",
-  "https://m-colen.github.io/number-guessor/",
+const projectImages = [
+  "../images/zen-coffee-thumbnail.PNG",
+  "../images/number-guessor-thumbnail.PNG",
 ];
 const projectDescriptions = [
-  "This project is the home page for a fictional coffee shop called Zen Coffee.",
-  "This project is a number guessing game in which you challenge the computer to see who can get closer to a secret number.",
+  "This project involved building the home page for a fictional coffee shop called Zen Coffee.",
+  "This project is a JS number guessing game in which you challenge the computer to see who can get closer to a secret number.",
 ];
 const githubPageLinks = [
   "https://github.com/m-Colen/zen-coffee",
@@ -116,10 +116,10 @@ let projectNumber = 0;
 
 // Moves to next project in arr
 const moveRight = () => {
-  projectNumber < projectSites.length - 1
+  projectNumber < projectImages.length - 1
     ? projectNumber++
     : (projectNumber = 0);
-  projectDisplay.setAttribute("src", projectSites[projectNumber]);
+  projectDisplay.setAttribute("src", projectImages[projectNumber]);
   projectSummaryText.innerHTML = projectDescriptions[projectNumber];
   githubButton.setAttribute("href", githubPageLinks[projectNumber]);
   liveButton.setAttribute("href", liveProjectLinks[projectNumber]);
@@ -129,8 +129,8 @@ const moveRight = () => {
 const moveLeft = () => {
   projectNumber >= 1
     ? projectNumber--
-    : (projectNumber = projectSites.length - 1);
-  projectDisplay.setAttribute("src", projectSites[projectNumber]);
+    : (projectNumber = projectImages.length - 1);
+  projectDisplay.setAttribute("src", projectImages[projectNumber]);
   projectSummaryText.innerHTML = projectDescriptions[projectNumber];
   githubButton.setAttribute("href", githubPageLinks[projectNumber]);
   liveButton.setAttribute("href", liveProjectLinks[projectNumber]);
