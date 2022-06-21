@@ -79,7 +79,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 section {
-  padding: 10% 12%;
+  padding: 5vh 12%;
 }
 
 li {
@@ -558,13 +558,13 @@ nav a:hover {
 }
 
 @media only screen and (max-width: 1175px) {
+  section {
+    padding: 5vh 12%;
+  }
   #about {
     flex-direction: column;
     margin: 0;
     padding: 0 12%;
-  }
-  section {
-    padding: 5vh 12%;
   }
 }
 
@@ -885,14 +885,14 @@ nav a:hover {
   .button {
     font-size: 0.9rem;
   }
-  #about {
-    padding: 0 4%;
+  nav {
+    padding: 0.4rem 4%;
   }
   section {
     padding: 5vh 4%;
   }
-  nav {
-    padding: 0.4rem 4%;
+  #about {
+    padding: 0 4%;
   }
   #about h1 {
     font-size: 2.3rem;
