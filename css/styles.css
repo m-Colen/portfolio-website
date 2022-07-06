@@ -839,6 +839,18 @@ nav a:hover {
   margin-top: 2%;
 }
 
+.project-summary-text > * {
+  margin-bottom: 1rem;
+}
+
+.project-summary-text ul {
+  padding-left: 20px;
+}
+
+.project-summary-text li {
+  list-style-type: circle;
+}
+
 .project-buttons {
   display: flex;
   flex-wrap: wrap;

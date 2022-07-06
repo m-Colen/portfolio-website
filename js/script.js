@@ -95,19 +95,30 @@ const liveButton = document.querySelector("#project-live-button");
 
 // Arrays for project data
 const projectImages = [
-  "https://github.com/m-Colen/portfolio-website/blob/main/images/zen-coffee-thumbnail.PNG?raw=true",
+  "https://github.com/m-Colen/portfolio-website/blob/main/images/kona-coffee-thumbnail.PNG?raw=true",
   "https://github.com/m-Colen/portfolio-website/blob/main/images/number-guessor-thumbnail.PNG?raw=true",
 ];
 const projectDescriptions = [
-  "This project involved building the home page for a fictional coffee shop called Zen Coffee.",
+  `
+  <h4>Kona Coffee</h4>
+  <p>For this build I wanted to see if I could create something similar to the Starbucks home page. As such, I created the home page for a fictional coffee company called Kona Coffee which is influenced by the Starbucks home page design.</p>
+  <p>I learned a lot of new things building out this page, including:</p>
+  <ul>
+  <li>Learning to use FireFox, Chrome Dev Tools more in depth. I learned that the answers to a lot of my questions are out there if I just look at the Dev Tools.</li>
+  <li>Learning to re-use classes more effectively. In this project, a lot of the card styles are shared so I can easily add more in the future if needed.</li>
+  <li>Working with building interactive accordions for the footer section.</li>
+  <li>Finally, I tried to make some of my JS functions more modular during this build. I attempted to seperate out some of the functions to make their uses more clear.</li>
+  </ul>
+  <p>Overall, this was a fun build and taught me a lot about using Dev Tools.</p>
+  `,
   "This project is a JS number guessing game in which you challenge the computer to see who can get closer to a secret number.",
 ];
 const githubPageLinks = [
-  "https://github.com/m-Colen/zen-coffee",
+  "https://github.com/m-Colen/kona-coffee",
   "https://github.com/m-Colen/number-guessor",
 ];
 const liveProjectLinks = [
-  "https://m-colen.github.io/zen-coffee/",
+  "https://m-colen.github.io/kona-coffee/",
   "https://m-colen.github.io/number-guessor/",
 ];
 
