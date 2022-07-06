@@ -55,6 +55,10 @@ h3 {
   text-align: center;
 }
 
+h4 {
+  font-size: 1.5rem;
+}
+
 .active {
   display: flex !important;
   flex-flow: column;
@@ -148,6 +152,7 @@ nav a {
   position: relative;
   z-index: 99;
   display: inline-block;
+  border-bottom: 3px solid transparent;
 }
 
 nav a:hover {
@@ -423,7 +428,7 @@ nav a:hover {
   gap: 2%;
   background-color: var(--primary-color);
   opacity: 0.975;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   position: relative;
 }
 
@@ -433,6 +438,12 @@ nav a:hover {
   border-bottom: 5px solid #333;
   padding: 0.5rem 0;
   text-align: center;
+}
+
+.main-greeting {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  max-width: 750px;
 }
 
 .about-lower-card {
@@ -521,6 +532,9 @@ nav a:hover {
   }
   .about-lower-card > * {
     width: 100%;
+  }
+  .main-greeting {
+    font-size: 1.2rem;
   }
 }
 
@@ -1040,4 +1054,8 @@ footer a:hover {
   align-items: center;
   gap: 1.25rem;
   transition: all 0.5s;
+}
+
+footer i {
+  font-size: 1.5rem;
 }
