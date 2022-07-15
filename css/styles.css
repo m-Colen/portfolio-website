@@ -34,6 +34,12 @@ body {
   margin: 0;
 }
 
+html,
+body,
+header {
+  height: 100%;
+}
+
 section {
   padding: 5vh 12%;
 }
@@ -296,7 +302,7 @@ footer a:hover {
 
 #nav-links-mobile a {
   color: #fff;
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
 #nav-links-mobile a:hover {
@@ -313,13 +319,17 @@ footer a:hover {
 * About section 
 */
 
+#about {
+  height: 100%;
+}
+
 .about-container {
   position: relative;
   z-index: 99;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 /* About card */
@@ -771,12 +781,11 @@ footer a:hover {
 * Projects section 
 */
 
-/* Project top card */
-
 #projects {
-  padding-top: 15vh;
-  padding-bottom: 15vh;
+  padding-top: 8vh !important;
 }
+
+/* Project top card */
 
 .project-carousel-top {
   display: flex;
@@ -879,8 +888,7 @@ footer a:hover {
   align-items: center;
   flex-flow: wrap;
   gap: 5vw;
-  padding-top: 2.5vh;
-  padding-bottom: 2.5vh;
+  padding: 2vh;
   border: 5px solid #333;
 }
 
@@ -1014,7 +1022,7 @@ footer i {
     padding: 0.4rem 17%;
   }
   .minimal-padding {
-    padding: 7vh 17%;
+    padding: 7vh 20%;
   }
   #contact fieldset {
     width: 80%;
@@ -1061,8 +1069,8 @@ footer i {
     padding: 0.4rem 10%;
   }
   .minimal-padding {
-    padding-left: 10% !important;
-    padding-right: 10% !important;
+    padding-left: 15% !important;
+    padding-right: 15% !important;
   }
   section {
     padding: 7vh 10%;
@@ -1101,7 +1109,8 @@ footer i {
     padding: 0 5% !important;
   }
   .minimal-padding {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
   }
 }
+
