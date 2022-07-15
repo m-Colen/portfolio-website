@@ -38,13 +38,13 @@ mobileAbout.addEventListener("click", toggleHamburgerMenu);
 mobileProjects.addEventListener("click", toggleHamburgerMenu);
 mobileContact.addEventListener("click", toggleHamburgerMenu);
 
-// Hides mobile nav when width passes 825px threshold
+// Hides mobile nav when width passes 700px threshold
 const resetNav = () => {
   const mobileNav = document.querySelector("#nav-links-mobile");
   const hamTopBun = document.querySelector(".ham-top-bun");
   const hamMiddle = document.querySelector(".ham-middle");
   const hamBottomBun = document.querySelector(".ham-bottom-bun");
-  if (window.innerWidth >= 825) {
+  if (window.innerWidth >= 700) {
     mobileNav.classList.remove("active");
     hamTopBun.classList.remove("ham-top-expanded");
     hamMiddle.classList.remove("slide-left");
@@ -62,18 +62,14 @@ window.addEventListener("resize", resetNav);
 
 const aboutButton = document.querySelectorAll(".about-button");
 const closeButton = document.querySelector("#about-me-button-close");
-const banner = document.querySelector(".about-top-card");
 
 const toggleAboutCard = () => {
   const aboutCard = document.querySelector(".about-text");
-  const aboutMinimal = document.querySelector(".about-minimal");
+  const aboutTopCard = document.querySelector(".about-top-card");
   aboutCard.classList.toggle("unhidden");
-  aboutCard.classList.toggle("active");
-  aboutMinimal.classList.toggle("inactive");
+  aboutCard.classList.toggle("inactive");
+  aboutTopCard.classList.toggle("inactive");
   closeButton.classList.toggle("inactive");
-
-  // Decreases the size of the banner section on about me activation
-  banner.classList.toggle("minimal");
 };
 
 aboutButton.forEach((item) => item.addEventListener("click", toggleAboutCard));
@@ -101,16 +97,16 @@ const projectImages = [
 
 const projectDescriptions = [
   `
-  <h4>Kona Coffee</h4>
-  <p>For this build I wanted to see if I could create something similar to the Starbucks homepage. As such, I created the homepage for a fictional coffee company called Kona Coffee which is influenced by the Starbucks design.</p>
-  <p>I learned a lot of new things building out this page, including:</p>
-  <ul>
-  <li>Learning to use FireFox, Chrome Dev Tools more in-depth. I learned that the answers to a lot of my questions are out there if I just look at the Dev Tools.</li>
-  <li>Learning to re-use classes more efficiently. In this project, many of the card styles are shared so I can easily add new sections in the future if needed.</li>
-  <li>Learning to build interactive accordions for the footer links section.</li>
-  <li>Finally, I tried to make some of my JavaScript functions more modular during this build. For instance, I attempted to separate out some of the functions to make their uses more clear.</li>
-  </ul>
-  <p>Overall, this was a fun build and taught me a lot about using Dev Tools and DRY principals.</p>
+<h4>Kona Coffee (Starbucks Homepage)</h4>
+            <p>For this build I created a clone of the Starbucks homepage as of July 2022 for a fictional coffee company called Kona Coffee.</p>
+            <p>I learned a lot of new things building out this page, including:</p>
+            <ul>
+              <li>Learning to use the FireFox & Chrome Dev Tools more in-depth.</li>
+              <li>Re-using classes more efficiently.</li>
+              <li>Building interactive accordions for the footer links section.</li>
+              <li>Making my JS functions more modular and clarifying their intent.</li>
+            </ul>
+            <p>Overall, this was a fun build and taught me a lot about using Dev Tools and DRY principals.</p>
   `,
   `
   <h4>Number Guessor</h4>

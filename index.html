@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matt Colen | Front End Web Developer</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700"
-      rel="stylesheet"
-    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/972df6eb1d.js"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/972df6eb1d.js" crossorigin="anonymous"></script>
+    <!-- JS -->
     <script src="js/script.js" defer></script>
   </head>
-
+  
   <body>
     <!--Header section-->
     <header>
@@ -26,20 +26,13 @@
         <!--Desktop nav menu-->
         <ul id="desktop-nav">
           <li class="nav-logo">
-            <a href="index.html" title="Home Page" aria-label="Home Page"
-              ><code>&lt_mC&gt</code></a
-            >
+            <a href="index.html" title="Home Page" aria-label="Home Page"><code>&lt_mC&gt</code></a>
           </li>
           <li>
             <!-- Nav internal links -->
             <ul class="nav-internal-links">
               <li>
-                <a
-                  class="nav-about-link about-button"
-                  href="#about"
-                  aria-label="About me"
-                  >About</a
-                >
+                <a class="nav-about-link about-button" href="#about" aria-label="About me">About</a>
               </li>
               <li>
                 <a href="#projects" aria-label="My projects">Projects</a>
@@ -50,42 +43,25 @@
             <!--Nav external links -->
             <ul class="nav-external-links">
               <li>
-                <a
-                  href="https://www.linkedin.com/in/matthew-colen-061650209/"
-                  target="_blank"
-                  aria-label="LinkedIn"
-                  ><i id="li-nav" class="fa-brands fa-linkedin"></i
-                ></a>
+                <a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" aria-label="LinkedIn"><i id="li-nav" class="fa-brands fa-linkedin"></i></a>
               </li>
               <li>
-                <a
-                  href="https://github.com/m-Colen"
-                  target="_blank"
-                  aria-label="GitHub"
-                  ><i id="gh-nav" class="fa-brands fa-github"></i
-                ></a>
+                <a href="https://github.com/m-Colen" target="_blank" aria-label="GitHub"><i id="gh-nav" class="fa-brands fa-github"></i></a>
               </li>
               <li>
-                <a href="#contact" aria-label="Contact me"
-                  ><i id="email-nav" class="fa-solid fa-at"></i
-                ></a>
+                <a href="#contact" aria-label="Contact me"><i id="email-nav" class="fa-solid fa-at"></i></a>
               </li>
             </ul>
           </li>
         </ul>
-
+  
         <!--Hamburger menu-->
-        <button
-          class="hamburger-menu"
-          role="button"
-          aria-label="Menu"
-          aria-expanded="false"
-        >
-          <div class="ham-top-bun"></div>
-          <div class="ham-middle"></div>
-          <div class="ham-bottom-bun"></div>
+        <button class="hamburger-menu" role="button" aria-label="Menu" aria-expanded="false">
+          <span class="ham-top-bun"></span>
+          <span class="ham-middle"></span>
+          <span class="ham-bottom-bun"></span>
         </button>
-
+  
         <!--Mobile nav menu-->
         <ul id="nav-links-mobile">
           <li>
@@ -100,88 +76,67 @@
         </ul>
       </nav>
     </header>
-
+  
     <!--Main section-->
     <main>
       <!--About section-->
-      <section id="about">
+      <section id="about" class="minimal-padding">
         <div class="about-container">
           <div class="about-top-card">
-            <div class="about-img">
-              <img src="images/banner-img.jpg" alt="Matt Colen" />
-            </div>
-            <div class="about-minimal">
+            <div class="about-primary">
               <h1>Matt Colen</h1>
-              <p>Front End Web Developer</p>
+              <p>Front-End | Web Developer</p>
               <div class="about-links">
-                <button class="button about-button" title="Learn more about me">
-                  About
-                </button>
-                <a
-                  class="button"
-                  href="#projects"
-                  title="Learn more about my projects"
-                  >Projects</a
-                >
+                <a class="button" href="#projects" title="Learn more about my projects">Projects</a>
               </div>
             </div>
+            <div class="about-img">
+              <div class="img-wrapper">
+                <img src="https://github.com/m-Colen/portfolio-website/blob/main/images/banner-img.jpg?raw=true" alt="Matt Colen" />
+                <button class="about-button about-button-img" title="Learn more about me">
+                  About
+                </button>
+              </div>
+            </div>
+  
           </div>
-
+  
           <!-- About card lower -->
-          <div class="about-text" class="inactive">
-            <p class="main-greeting">
-              Hi, I'm Matt. I'm a front-end web developer who loves trying to
-              push the boundaries of what's possible.
-            </p>
+          <div class="about-text inactive">
+            <div>
+              <p class="main-greeting">
+                Hi, I'm Matt. I'm a front-end web developer who loves trying to
+                push the boundaries of what's possible.
+              </p>
+              <button id="about-me-button-close" class="inactive" aria-label="Close about section">
+                <i class="fa-solid fa-xmark fa-2x"></i>
+              </button>
+            </div>
             <div class="about-lower-card">
               <div>
-                <h3 class="about-main-header">My goals:</h3>
+                <h3 class="about-main-header">My focus:</h3>
                 <ul class="about-main-text">
-                  <li>Creating responsive designs</li>
-                  <li>Creating designs that are accessible to everyone</li>
-                  <li>Solving complex problems</li>
+                  <li>Creating responsive designs.</li>
+                  <li>Making designs that are accessible to everyone.</li>
+                  <li>Solving complex problems.</li>
                   <li>Always learning new skills!</li>
                 </ul>
               </div>
               <div class="about-card-contact">
                 <p>Reach out to me to learn more!</p>
-                <a
-                  href="https://www.linkedin.com/in/matthew-colen-061650209/"
-                  target="_blank"
-                  aria-label="LinkedIn"
-                  ><i id="li-nav" class="fa-brands fa-linkedin"></i
-                ></a>
-                <a
-                  href="https://github.com/m-Colen"
-                  target="_blank"
-                  aria-label="GitHub"
-                  ><i id="gh-nav" class="fa-brands fa-github"></i
-                ></a>
-                <a href="#contact" aria-label="Contact me"
-                  ><i id="email-nav" class="fa-solid fa-at"></i
-                ></a>
-                <ul class="about-links projects-link-card">
+                <a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" aria-label="LinkedIn"><i id="li-nav" class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/m-Colen" target="_blank" aria-label="GitHub"><i id="gh-nav" class="fa-brands fa-github"></i></a>
+                <a href="#contact" aria-label="Contact me"><i id="email-nav" class="fa-solid fa-at"></i></a>
+                <ul class="projects-link-card">
                   <li>
-                    <a
-                      class="button"
-                      href="#projects"
-                      title="Learn more about my projects"
-                      >Projects</a
-                    >
+                    <a class="button" href="#projects" title="Learn more about my projects">Projects</a>
                   </li>
                 </ul>
               </div>
             </div>
-            <button
-              id="about-me-button-close"
-              class="inactive"
-              aria-label="Close about section"
-            >
-              <i class="fa-solid fa-xmark fa-2x"></i>
-            </button>
           </div>
         </div>
-
+  
         <!-- Stars animation -->
         <div role="presentation" aria-hidden="true" id="falling-stars">
           <div class="star" id="line-1"></div>
@@ -216,69 +171,46 @@
           <div class="star" id="line-30"></div>
         </div>
       </section>
-
+  
       <!--Projects section-->
       <section id="projects">
         <h2>Projects</h2>
-        <div class="projects-container">
-          <div class="arrows">
-            <button>
-              <i
-                id="left-arrow"
-                class="fa-solid fa-angle-left"
-                aria-label="previous-project"
-              ></i>
-            </button>
-            <button>
-              <i
-                id="right-arrow"
-                class="fa-solid fa-angle-right"
-                aria-label="next-project"
-              ></i>
-            </button>
-          </div>
-          <div class="project-carousel">
-            <img class="carousel-img"
-              src="https://github.com/m-Colen/portfolio-website/blob/main/images/kona-coffee-thumbnail.PNG?raw=true"
-              alt="Zen Coffee Project"
-            >
+        <div class="project-carousel">
+          <div class="project-carousel-top">
+            <img class="carousel-img" src="https://github.com/m-Colen/portfolio-website/blob/main/images/kona-coffee-thumbnail.PNG?raw=true" alt="Zen Coffee Project">
             </img>
-            <div class="project-summary">
-              <div class="project-summary-text">
-                <h4>Kona Coffee</h4>
-                <p>For this build I wanted to see if I could create something similar to the Starbucks homepage. As such, I created the homepage for a fictional coffee company called Kona Coffee which is influenced by the Starbucks design.</p>
-                <p>I learned a lot of new things building out this page, including:</p>
-                <ul>
-                <li>Learning to use FireFox, Chrome Dev Tools more in-depth. I learned that the answers to a lot of my questions are out there if I just look at the Dev Tools.</li>
-                <li>Learning to re-use classes more efficiently. In this project, many of the card styles are shared so I can easily add new sections in the future if needed.</li>
-                <li>Learning to build interactive accordions for the footer links section.</li>
-                <li>Finally, I tried to make some of my JavaScript functions more modular during this build. For instance, I attempted to separate out some of the functions to make their uses more clear.</li>
-                </ul>
-                <p>Overall, this was a fun build and taught me a lot about using Dev Tools and DRY principals.</p>
-              </div>
-              <div class="project-buttons">
-                <a
-                  id="project-github-button"
-                  class="button project-button"
-                  href="https://github.com/m-Colen/kona-coffee"
-                  target="_blank"
-                  >GitHub Page</a
-                >
-                <a
-                  id="project-live-button"
-                  class="button project-button"
-                  href="https://m-colen.github.io/kona-coffee/"
-                  target="_blank"
-                  >Live View</a
-                >
-              </div>
+            <div class="arrows">
+              <button>
+                <i id="left-arrow" class="fa-solid fa-angle-left" aria-label="previous-project"></i>
+              </button>
+              <button>
+                <i id="right-arrow" class="fa-solid fa-angle-right" aria-label="next-project"></i>
+              </button>
+            </div>
+          </div>
+          <div class="project-summary">
+            <div class="project-summary-text">
+              <h4>Kona Coffee (Starbucks Homepage)</h4>
+              <p>For this build I created a clone of the Starbucks homepage as of July 2022 for a fictional coffee company called Kona Coffee.</p>
+              <p>I learned a lot of new things building out this page, including:</p>
+              <ul>
+                <li>Learning to use the FireFox & Chrome Dev Tools more in-depth.</li>
+                <li>Re-using classes more efficiently.</li>
+                <li>Building interactive accordions for the footer links section.</li>
+                <li>Making my JS functions more modular and clarifying their intent.</li>
+              </ul>
+              <p>Overall, this was a fun build and taught me a lot about using Dev Tools and DRY principals.</p>
+            </div>
+            <div class="project-buttons">
+              <a id="project-github-button" class="button project-button" href="https://github.com/m-Colen/kona-coffee" target="_blank">GitHub Page</a>
+              <a id="project-live-button" class="button project-button" href="https://m-colen.github.io/kona-coffee/" target="_blank">Live View</a>
             </div>
           </div>
         </div>
       </section>
-
+  
       <!-- Tech stack section -->
-      <section id="tech-stack">
+      <section id="tech-stack" class="minimal-padding">
         <h2>Tech stack</h2>
         <div class="skills-container">
           <div class="html-container" class="tech-card">
@@ -299,7 +231,7 @@
           </div>
           <div class="gitHub-container" class="tech-card">
             <i class="fab fa-github fa-2x github-animation"></i>
-            <div>GitHub</div>
+            <p>GitHub</p>
           </div>
           <div class="figma-container" class="tech-card">
             <i class="fab fa-figma fa-2x"></i>
@@ -307,63 +239,34 @@
           </div>
         </div>
       </section>
-
+  
       <!-- Contact section -->
-      <section id="contact">
+      <section id="contact" class="minimal-padding">
         <h2>Contact</h2>
         <form action="https://submit-form.com/DrgOInqq" target="_blank">
           <fieldset>
             <legend>Please enter your information below to contact me</legend>
             <input type="hidden" name="_feedback.dark" value="true" />
             <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              aria-label="Enter your name"
-              required
-            />
+            <input type="text" id="name" name="name" aria-label="Enter your name" required />
             <label for="email">Email address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              aria-label="Enter your email address"
-              required
-            />
+            <input type="email" id="email" name="email" aria-label="Enter your email address" required />
             <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              maxlength="3000"
-              aria-label="Enter your message"
-              required
-            ></textarea>
+            <textarea id="message" name="message" rows="4" maxlength="3000" aria-label="Enter your message" required></textarea>
             <button type="submit" class="button contact-button">Send</button>
           </fieldset>
         </form>
       </section>
     </main>
-
+  
     <!-- Footer section -->
     <footer>
       <ul id="footer-contact">
         <li class="contact-link">
-          <a
-            href="https://www.linkedin.com/in/matthew-colen-061650209/"
-            target="_blank"
-            aria-label="LinkedIn"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
+          <a href="https://www.linkedin.com/in/matthew-colen-061650209/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         </li>
         <li class="contact-link">
-          <a
-            href="https://github.com/m-Colen"
-            target="_blank"
-            aria-label="GitHub"
-            ><i class="fa-brands fa-github"></i
-          ></a>
+          <a href="https://github.com/m-Colen" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         </li>
       </ul>
     </footer>
