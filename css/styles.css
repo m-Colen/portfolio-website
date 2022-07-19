@@ -377,7 +377,7 @@ footer a:hover {
   position: absolute;
   width: 100%;
   bottom: -1rem;
-  padding: 1rem 0;
+  padding: 1.1rem 0;
   padding-bottom: 2rem;
   transition: all 0.5s ease-in;
   font-weight: bold;
@@ -386,7 +386,7 @@ footer a:hover {
 
 .img-wrapper button:hover {
   bottom: 0;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
 #about h1,
