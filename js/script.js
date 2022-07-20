@@ -92,35 +92,44 @@ const liveButton = document.querySelector("#project-live-button");
 // Arrays for project data
 const projectImages = [
   "https://github.com/m-Colen/portfolio-website/blob/main/images/kona-coffee-thumbnail.PNG?raw=true",
+  "https://github.com/m-Colen/portfolio-website/blob/main/images/tip-calculator-thumbnail.PNG?raw=true",
   "https://github.com/m-Colen/portfolio-website/blob/main/images/number-guessor-thumbnail.PNG?raw=true",
 ];
 
 const projectDescriptions = [
   `
-<h4>Kona Coffee (Starbucks Homepage)</h4>
-            <p>For this build I created a clone of the Starbucks homepage as of July 2022 for a fictional coffee company called Kona Coffee.</p>
-            <p>I learned a lot of new things building out this page, including:</p>
-            <ul>
-              <li>Learning to use the FireFox & Chrome Dev Tools more in-depth.</li>
-              <li>Re-using classes more efficiently.</li>
-              <li>Building interactive accordions for the footer links section.</li>
-              <li>Making my JS functions more modular and clarifying their intent.</li>
-            </ul>
-            <p>Overall, this was a fun build and taught me a lot about using Dev Tools and DRY principals.</p>
+  <h4>Kona Coffee (Starbucks Homepage)</h4>
+  <p>For this build I created a clone of the Starbucks homepage as of 07/22 for a fictional coffee company called Kona Coffee.</p>
+  <p>I learned a lot of new things building out this page, including:</p>
+  <ul>
+    <li>Learning to use the FireFox & Chrome Dev Tools more in-depth.</li>
+    <li>Re-using classes more efficiently.</li>
+    <li>Building interactive accordions for the footer links section.</li>
+    <li>Making my JS functions more modular and clarifying their intent.</li>
+  </ul>
+  <p>Overall, this was a fun build and taught me a lot about using Dev Tools and DRY principals.</p>
+  `,
+  `
+  <h4>JavaScript Tip Calculator</h4>
+  <p>This project involved building a simple tip calculator using JavaScript. I learned a lot about validating data when working with user input.</p>
+  <p>I also tried to keep my JS functions as modular as possible in order to separate out their primary functions.</p>
   `,
   `
   <h4>Number Guessor</h4>
-  <p>This project is a JavaScript based number guessing game in which the user can challenge the computer to see who can guess a number closest to a secret number.</p>
+  <p>This was a CodeCademy project which involved building a JavaScript based number guessing game.</p>
+  <p>The main goal of the game is to challenge the computer to see who can guess a number closest to a secret number.</p>
   `,
 ];
 
 const githubPageLinks = [
   "https://github.com/m-Colen/kona-coffee",
+  "https://github.com/m-Colen/tip-calculator",
   "https://github.com/m-Colen/number-guessor",
 ];
 
 const liveProjectLinks = [
   "https://m-colen.github.io/kona-coffee/",
+  "https://m-colen.github.io/tip-calculator/",
   "https://m-colen.github.io/number-guessor/",
 ];
 
